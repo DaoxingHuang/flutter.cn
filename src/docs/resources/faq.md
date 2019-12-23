@@ -592,14 +592,27 @@ binaries within the IPA, making the compression less efficient
 (see the [iOS App Store Specific Considerations][]
 section of Apple’s [QA1795][]).
 
-
 在 iOS 平台上，跟据 App Store Connect 的数据，
 同一应用的发布 IPA 在 iPhone X 上的下载文件体积为 10.9 MB。
 IPA 比 APK 大，主要是因为 Apple 加密了 IPA 中的二进制文件，
 使得压缩效率降低。
 （可以查看 [iOS App Store Specific Considerations][] 中 [QA1795][] 关于加密的部分）
 
-Of course, YMMV, and we recommend that you measure your own app.
+As of Flutter SDK 1.12, the release engine binary now includes LLVM IR
+(bitcode). Xcode uses this bitcode to produce a final binary for the App Store
+containing the latest compiler optimizations and features.
+The profile and debug frameworks contain only a _bitcode marker_,
+and are more representative of the engine's actual binary size.
+Whether you ship with bitcode or not, the increased size of the release
+framework is stripped out during the final steps of the build.
+These steps happen after archiving your app and shipping it to the store.
+
+从 Flutter SDK 1.12 开始，release 模式下引擎二进制产物将包含 LLVM 的中间语言表示（bitcode）。
+Xcode 将使用 bitcode 为 App Store 生成最终包含了最新的编译器优化和功能的二进制文件。
+Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 _bitcode marker_，因此更能代表引擎的真实大小。
+无论你是否使用 bitcode，release 模式下增加的包大小都会在应用归档后并发布到应用商店后，在构建的最终步骤里被移除。
+
+Of course, we recommend that you measure your own app.
 To measure an Android app, run `flutter build apk` (using the new
 `--split-per-abi` option in version 1.7.8+hotfix.3 and later)
 and load the APK
@@ -774,16 +787,14 @@ The current progress is documented [on the Flutter wiki][].
 
 ### 我能在我现有的原生应用里使用 Flutter 吗？
 
-Yes, you can embed a Flutter view in your existing Android
-for this use case (see [issue #14821][] for details).
+Yes, one fullscreen Flutter instance can be integrated per app on Android and
+iOS.
 
-可以，您可以在现有的 Android 或 iOS 应用中嵌入 Flutter 视图，但是我们的工具目前尚未针对这场景进行全面优化 (相关详情请参考 [issue #14821][])。
+可以，你可以在 Android 或 iOS 应用中嵌入一个全屏的 Flutter 实例。
 
-Two current demonstrations of this are the
-[platform_view][] and [flutter_view][]
-examples. Some initial documentation is
-available in the wiki page
-[Add Flutter to existing apps][].
+See our integration documentation in the [add-to-app section][] of our website.
+
+请参考 [这个文档][add-to-app section]，查看如何将 Flutter 加入现有的项目。
 
 目前的两个演示项目是 [platform_view][] 和 [flutter_view][]。我们的 wiki 页面中也提供了一些初始文档：[将 Flutter 添加至现有应用][Add Flutter to existing apps]。
 
@@ -1474,7 +1485,7 @@ deployed to Apple's App Store.
 
 [`AboutListTile`]: {{site.api}}/flutter/material/AboutListTile-class.html
 [accessibility documentation]: /docs/development/accessibility-and-localization/accessibility
-[Add Flutter to existing apps]: {{site.github}}/flutter/flutter/wiki/Add-Flutter-to-existing-apps
+[add-to-app section]: /docs/development/add-to-app
 [Android]: #run-android
 [Android Studio]: {{site.android-dev}}/studio
 [Android Studio instructions]: {{site.android-dev}}/studio/build/apk-analyzer
