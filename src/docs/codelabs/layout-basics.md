@@ -32,7 +32,7 @@ downloading and installing Flutter or Dart!
 
 Flutter is different from other frameworks because its UI
 is built in code, not (for example) in an XML file or similar.
-Widgets are the basic building blocks of a Flutter UI.
+widgets are the basic building blocks of a Flutter UI.
 As you progress through this codelab,
 you'll learn that almost everything in Flutter is a widget.
 A widget is an immutable object that describes a specific part of a UI.
@@ -44,11 +44,11 @@ into building a Flutter UI that displays a business card.
 
 Flutter 与其他框架有着明显的差异，
 原因在于它使用代码来构建 UI，而不是 XML 或其他东西。
-其中，Widget 是构建 Flutter UI 的基本单元。
-当你逐渐深入这个 codelab，你将会发现在 Flutter 中几乎所有的东西都是 Widget。
-Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述。
-你还会学到 Flutter 的 Widget 非常容易组合，
-这意味着你能够通过组合已有的 Widgets 来创造更多复杂的 Widgets。
+其中，widget 是构建 Flutter UI 的基本单元。
+当你逐渐深入这个 codelab，你将会发现在 Flutter 中几乎所有的东西都是 widget。
+widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述。
+你还会学到 Flutter 的 widget 非常容易组合，
+这意味着你能够通过组合已有的 widgets 来创造更多复杂的 widgets。
 到这篇文章的最后，你会运用这里所学的知识构建一个显示名片的 Flutter UI。
 
 **Estimated time to complete this codelab: 45-60 minutes.**
@@ -60,15 +60,15 @@ Widget 是一个不会改变的对象，它是 UI 中一个特定部分的描述
 ## Row 和 Column 类
 
 `Row` and `Column` are classes that contain and lay out widgets.
-Widgets inside of a `Row` or `Column` are called *children*,
+widgets inside of a `Row` or `Column` are called *children*,
 and `Row` and `Column` are referred to as *parents*.
 `Row` lays out its widgets horizontally,
 and `Column` lays out its widgets vertically.
 
-`Row` 和 `Column` 是两个用来容纳和布局 Widgets 的类。
-在它们内部的 Widgets 我们称为 *children*，
+`Row` 和 `Column` 是两个用来容纳和布局 widgets 的类。
+在它们内部的 widgets 我们称为 *children*，
 `Row` 和 `Column` 就作为它们的父级。
-`Row` 将会让 Widgets 水平排列，而 Column 则会让其竖直排列。
+`Row` 将会让 widgets 水平排列，而 Column 则会让其竖直排列。
 
 #### Example: Creating a Column
 {:.no_toc}
@@ -78,8 +78,7 @@ and `Column` lays out its widgets vertically.
 
 {{site.alert.secondary}}
 
-  The following example displays the differences between
-  a `Row` and `Column`.
+  The following example displays the differences between a `Row` and `Column`.
 
   下面的样例将会显示 `Row` 和 `Column` 的区别。
 
@@ -95,7 +94,7 @@ and `Column` lays out its widgets vertically.
 {% comment %}
   Gist: https://gist.github.com/009a77697460e7ec6a3c142f0dfb1b5e
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=009a77697460e7ec6a3c142f0dfb1b5e&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=009a77697460e7ec6a3c142f0dfb1b5e&amp;theme=dark&amp;split=60&amp;ga_id=column" width="100%" height="400px"></iframe>
 
 ## Axis size and alignment
 
@@ -106,8 +105,8 @@ So far, the `BlueBox` widgets have been squished together
 You can change how the `BlueBox` widgets are spaced
 out using the axis size and alignment properties.
 
-至此，`BlueBox` widget 已经在一起被压扁了（在界面的左边或者上面）。
-你可以通过轴大小和对齐属性来改变 `BlueBox` Widget 的间距。
+至此，`BlueBox` widget 已经在一起被压扁了 (在界面的左边或者上面 )。
+你可以通过轴大小和对齐属性来改变 `BlueBox` widget 的间距。
 
 ### mainAxisSize property
 
@@ -132,7 +131,7 @@ The `mainAxisSize` property has two possible values:
 
 `MainAxisSize.max`
 <br>  `Row` 和 `Column` 占据它们主轴上所有空间。
-  如果子 Widget 的总宽度小于主轴上的空间，它们就会充满剩余的空间。
+  如果子 widget 的总宽度小于主轴上的空间，它们就会充满剩余的空间。
 
 `MainAxisSize.min`
 <br> `Row` and `Column` only occupy enough space on their main axes
@@ -168,20 +167,20 @@ The `mainAxisSize` property has two possible values:
 
   下面的样例将会特别指定 `mainAxisSize` 为其默认值 `MainAxisSize.max`。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮。
+   点击 **运行** 按钮。
 
-**2.** Change `MainAxisSize.max` to `MainAxisSize.min`,
-       and run again.
+1. Change `MainAxisSize.max` to `MainAxisSize.min`,
+   and run again.
 
-       将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
+   将 `MainAxisSize.max` 改为 `MainAxisSize.min`，并再次运行。 
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/928d699ea0869e75d072e6e9c4e63397
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=928d699ea0869e75d072e6e9c4e63397&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=928d699ea0869e75d072e6e9c4e63397&amp;theme=dark&amp;split=60&amp;ga_id=axis_size" width="100%" height="400px"></iframe>
 
 ### mainAxisAlignment property
 
@@ -203,14 +202,14 @@ can position their children in that extra space.
   (Left for `Row`, top for `Column`)
 
 `MainAxisAlignment.start`
-<br> 将其 children 从主轴起点处开始对齐。（`Row` 的起点在左边，`Column` 的起点在顶部）
+<br> 将其 children 从主轴起点处开始对齐。 (`Row` 的起点在左边，`Column` 的起点在顶部 )
 
 `MainAxisAlignment.end`
 <br> Positions children near the end of the main axis. 
   (Right for `Row`, bottom for `Column`)
 
 `MainAxisAlignment.end`
-<br> 将其 children 从主轴终点处开始对齐。（`Row` 的终点在右边，`Column` 的终点在底部）
+<br> 将其 children 从主轴终点处开始对齐。 (`Row` 的终点在右边，`Column` 的终点在底部 )
 
 `MainAxisAlignment.center`
 <br> Positions children at the middle of the main axis.
@@ -257,21 +256,21 @@ can position their children in that extra space.
   下面的样例将特别指定 `mainAxisAlignment` 为其默认值，
   `MainAxisAlignment.start`。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮。
+   点击**运行**按钮。
 
-**2.** Change `MainAxisAlignment.start` to
-         `MainAxisAlignment.end`, and run again.
+1. Change `MainAxisAlignment.start` to
+   `MainAxisAlignment.end`, and run again.
 
-       将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，
-       然后再次运行。
+   将 `MainAxisAlignment.start` 改为 `MainAxisAlignment.end`，
+   然后再次运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/6b00f558718e9f23de5c61503aa1bfe4
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=6b00f558718e9f23de5c61503aa1bfe4&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=6b00f558718e9f23de5c61503aa1bfe4&amp;theme=dark&amp;split=60&amp;ga_id=axis_alignment" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
 
   Before moving to the next section,
@@ -301,26 +300,26 @@ The `crossAxisAlignment` property has five possible values:
 <br> Positions children near the start of the cross axis. (Top for `Row`, Left for `Column`)
 
 `CrossAxisAlignment.start`
-<br> 将其 children 横轴顶部对齐。（顶部是 `Row`，左侧是 `Column`）
+<br> 将其 children 横轴顶部对齐。 (顶部是 `Row`，左侧是 `Column` )
 
 `CrossAxisAlignment.end`
 <br> Positions children near the end of the cross axis. (Bottom for `Row`, Right for `Column`)
 
 `CrossAxisAlignment.end`
-<br> 将其 children 横轴底部对齐。（底部是 `Row`，右侧是 `Column`）
+<br> 将其 children 横轴底部对齐。 (底部是 `Row`，右侧是 `Column` )
 
 `CrossAxisAlignment.center`
 <br> Positions children at the middle of the cross axis. (Middle for `Row`, Center for `Column`)
 
 `CrossAxisAlignment.center`
-<br> 将其 children 横轴中心对齐。（中间是 `Row`，中心是 `Column`）
+<br> 将其 children 横轴中心对齐。 (中间是 `Row`，中心是 `Column` )
 
 `CrossAxisAlignment.stretch`
 <br> Stretches children across the cross axis. 
   (Top-to-bottom for `Row`, left-to-right for `Column`)
 
 `CrossAxisAlignment.stretch`
-<br>沿横轴延伸 children。（在 `Row` 中是从顶至底，`Column` 则是从左至右）
+<br>沿横轴延伸 children。 (在 `Row` 中是从顶至底，`Column` 则是从左至右 )
 
 `CrossAxisAlignment.baseline`
 <br> Aligns children by their character baselines.
@@ -331,7 +330,7 @@ The `crossAxisAlignment` property has five possible values:
 
 `CrossAxisAlignment.baseline`
 <br> 根据 children 的基线对子节点。
-  （仅限`Text`类，并要求 `textBaseline` 属性设置为
+   (仅限`Text`类，并要求 `textBaseline` 属性设置为
   `TextBaseline.alphabetic`。
   在 [Text class](#text-class) 小节中查看样例。
 
@@ -357,23 +356,23 @@ The `crossAxisAlignment` property has five possible values:
 
   为了演示横轴对齐方式，`mainAxisAlignment` 被设为
   `MainAxisAlignment.spaceAround`，`Row` 现在包含一个比
-  “BlueBox” Widget 更高的 `BiggerBlueBox` Widget。
+  “BlueBox” widget 更高的 `BiggerBlueBox` widget。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change `CrossAxisAlignment.center` to
-       `CrossAxisAlignment.start`, and run again.
+1. Change `CrossAxisAlignment.center` to
+   `CrossAxisAlignment.start`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 
-       `CrossAxisAlignment.start`，并再次运行。
+   将 `CrossAxisAlignment.center` 改为 
+   `CrossAxisAlignment.start`，并再次运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/d160e264a865479586ec7940f45cf8b2
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d160e264a865479586ec7940f45cf8b2&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=d160e264a865479586ec7940f45cf8b2&amp;theme=dark&amp;split=60&amp;ga_id=cross_axis_alignment" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
 
   Before moving to the next section,
@@ -408,7 +407,7 @@ the widgets are resized according to their
 
 `Flexible` widget 包裹一个 widget 让这个 widget 变得可以调整大小。
 当 `Flexible` widget 包裹 widget 时，
-这个 Widget 就成为 `Flexible` widget 的子节点，
+这个 widget 就成为 `Flexible` widget 的子节点，
 并被视为 *flexible* 的。在布置固定大小的 widget 后，
 Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 
@@ -425,7 +424,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   fills all of its extra space.
 
 `fit`
-<br> 决定 `Flexible` 的 Widget 是否能够填充所有剩余空间。 
+<br> 决定 `Flexible` 的 widget 是否能够填充所有剩余空间。 
 
 #### Example: Changing fit properties
 {:.no_toc}
@@ -444,7 +443,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   <br> The widget's preferred size is used. (Default)
 
   `FlexFit.loose`
-  <br> 使用 Widget 的自身作为首选大小。（默认情况下）
+  <br> 使用 widget 的自身作为首选大小。 (默认情况下 )
 
   `FlexFit.tight`
   <br> Forces the widget to fill all of its extra space.
@@ -458,20 +457,20 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   在这个样例中，改变 `fit` 属性使 `Flexible` widgets
   能够填充剩余空间。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change both `fit` values to `FlexFit.tight`, 
-       and run again.
+1. Change both `fit` values to `FlexFit.tight`, 
+   and run again.
 
-       将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
+   将所有 `fit` 的值设为 `FlexFit.tight`，并再次运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/817baa1ba2123f15abda92598c4343cc
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=817baa1ba2123f15abda92598c4343cc&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=817baa1ba2123f15abda92598c4343cc&amp;theme=dark&amp;split=60&amp;ga_id=fit_properties" width="100%" height="400px"></iframe>
 
 #### Example: Testing flex values
 {:.no_toc}
@@ -489,17 +488,18 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   values set to 1 (the default value).
 
   在下面这个例子中，`Row` 包含了一个 `BlueBox` widget 和
-  两个 `Flexible` widgets 包裹的 `BlueBox` Widget。
-  `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。（默认值）
+  两个 `Flexible` widgets 包裹的 `BlueBox` widget。
+  `Flexible` widgets 包含了 `flex` 属性，并将其值设为 1。 (默认值 )
 
   When `flex` properties are compared against one another, 
   the ratio between their `flex` values determines 
   what fraction of the total remaining space each
   `Flexible` widget receives.
-
-  当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` Widget
+  
+  当 `flex` 属性互相比较时，它们的 `flex` 值的比率决定了 `Flexible` widget
   自身所占剩余空间的比例。
 
+  <!-- skip -->
   ```dart
   remainingSpace * (flex / totalOfAllFlexValues)
   ```
@@ -510,14 +510,14 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
   The `BlueBox` widget (or fixed-size widget)
   remains the same size.
 
-  在这个例子中，`flex` 值的总和为（2），这决定了每个 `Flexible` widgets 
-  都能分到总剩余空间的一半空间。`BlueBox` widget（或是 fixed-size widget）得到了相同的大小。
+  在这个例子中，`flex` 值的总和为 (2 )，这决定了每个 `Flexible` widgets 
+  都能分到总剩余空间的一半空间。`BlueBox` widget (或是 fixed-size widget )得到了相同的大小。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/ae6a86bbb9a34c9ff76c88f64df23987
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ae6a86bbb9a34c9ff76c88f64df23987&amp;theme=dark&amp;fw=true&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ae6a86bbb9a34c9ff76c88f64df23987&amp;theme=dark&amp;fw=true&amp;split=60&amp;ga_id=flex_values" width="100%" height="400px"></iframe>
 {{site.alert.tip}}
 
   Before moving to the next example,
@@ -533,7 +533,7 @@ Flex 的 widget 根据其 `flex` 和 `fit` 属性调整大小：
 Similar to `Flexible`, the `Expanded` widget can
 wrap a widget and force the widget to fill extra space.
 
-`Expanded` widget 能够包裹一个 Widget 并强制其填满剩余空间，
+`Expanded` widget 能够包裹一个 widget 并强制其填满剩余空间，
 与 `Flexible` 非常相似。
 
 {{site.alert.tip}}
@@ -547,7 +547,7 @@ wrap a widget and force the widget to fill extra space.
 
   **Flexible 和 Expanded 有何不同呢？**
   使用 `Flexible` 在  `Row` 或 `Column` 中重新调整 widgets 的大小。
-  这样，你就可以调整子 Widget 的间距同时保持其相对于父 Widget  的大小。
+  这样，你就可以调整子 widget 的间距同时保持其相对于父 widget  的大小。
   `Expanded`改变子窗口小部件的约束， 所以它会填补全部空白空间。
 
 {{site.alert.end}} 
@@ -563,32 +563,34 @@ wrap a widget and force the widget to fill extra space.
   The following example demonstrates how the
   `Expanded` widget forces its child widget to
   fill extra space.
+  
+  下面的例子演示了 `Expanded` widget 是如何
+  强制其子 widget 填满空间的。
 
-**1.** Click the **Run** button.
-
-       点击**运行**按钮 
-
-**2.** Wrap the second `BlueBox` widget in an `Expanded` widget. 
-
-       在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
-
-For example: 
-
-例如：
-
-```dart
-Expanded(child: BlueBox(),),
-```
-**3.** Select the **Format** button to properly format the code,
-       and run again. 
-        
-       点击 **Format (格式化)** 按钮格式化你的代码，再重新运行一次。
+  **1.** Click the **Run** button.
          
+         点击**运行**按钮 
+
+  **2.** Wrap the second `BlueBox` widget in an `Expanded` widget.
+  
+         在第二个 `BlueBox` widget 外包裹一个 `Expanded` widget。
+
+  For example:
+
+  <!-- skip -->
+  ```dart
+  Expanded(child: BlueBox(),),
+  ```
+  **3.** Select the **Format** button to properly format the code,
+         and run again.
+         
+         选择 **Format** 按钮格式化代码，然后再次运行。
 {{site.alert.end}}
+
 {% comment %}
   Gist: https://gist.github.com/c4dfa9058f803dea1cff4fca2532977a
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c4dfa9058f803dea1cff4fca2532977a&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c4dfa9058f803dea1cff4fca2532977a&amp;theme=dark&amp;split=60&amp;ga_id=extra_space" width="100%" height="400px"></iframe>
 
 ## SizedBox widget
 
@@ -601,15 +603,15 @@ it uses the `height` and `width` properties to
 create empty space.
 
 `SizedBox` widget 的两种用途之一就是创建精确的尺寸。
-当 `SizedBox` 包裹了一个 Widget 时，
+当 `SizedBox` 包裹了一个 widget 时，
 它会使用 `height` 和 `width` 调整其大小。
-如果它没有包裹 Widget，
+如果它没有包裹 widget，
 它可以使用`height`和`width`属性创造空的空间。
 
 #### Example: Resizing a widget 
 {:.no_toc}
 
-#### 样例：调整一个 Widget
+#### 样例：调整一个 widget
 {:.no_toc}
 
 {{site.alert.secondary}}
@@ -619,26 +621,27 @@ create empty space.
   下面的样例使用 `SizedBox` widget 包裹了中间的 `BlueBox` widget，
   并将 `BlueBox` 的宽度设为 100 逻辑像素。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add a `height` property equal to 100 logical pixels
-         inside the `SizedBox` widget, and run again. 
+1. Add a `height` property equal to 100 logical pixels
+   inside the `SizedBox` widget, and run again. 
 
-       将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
+   将 `SizedBox` widget 中的 `height` 设为 100 逻辑像素，并重新运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/716612f4ae2d979cc5a2868e06c14e58
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=716612f4ae2d979cc5a2868e06c14e58&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=716612f4ae2d979cc5a2868e06c14e58&amp;theme=dark&amp;split=60&amp;ga_id=resizing_widget" width="100%" height="400px"></iframe>
 
 #### Example: Creating space 
+{:.no_toc}
 
 #### 样例：创建空间
-
 {:.no_toc}
+
 {{site.alert.secondary}}
 
   The following example contains three `BlueBox` widgets
@@ -650,30 +653,30 @@ create empty space.
   其中 第一个和第二个 `BlueBox` widget 包裹 `SizedBox`。
   `SizedBox` widget 的 `width` 设为 50 逻辑像素。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Create more space by adding another
-         `SizedBox` widget (25 logical pixels wide) 
-         between the second and third `BlueBox` widgets,
-         and run again.
+1. Create more space by adding another
+   `SizedBox` widget (25 logical pixels wide) 
+   between the second and third `BlueBox` widgets,
+   and run again.
 
-       通过在第二个和第三个 `BlueBox` widget 之间
-       添加另一个 `SizedBox` widget (宽 25 逻辑像素)以创建更多空间。 
+   通过在第二个和第三个 `BlueBox` widget 之间
+   添加另一个 `SizedBox` widget (宽 25 逻辑像素)以创建更多空间。 
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/1c690c529316fbe7af0b4c9edb8da512
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=1c690c529316fbe7af0b4c9edb8da512&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=1c690c529316fbe7af0b4c9edb8da512&amp;theme=dark&amp;split=60&amp;ga_id=creating_space" width="100%" height="400px"></iframe>
 
 ## Spacer widget
 
 Similar to `SizedBox`, the `Spacer` widget also
 can create space between widgets.
 
-与 `SizedBox` 相似，`Spacer` widget 也能在 Widgets 之间创建空间。
+与 `SizedBox` 相似，`Spacer` widget 也能在 widgets 之间创建空间。
 
 {{site.alert.tip}}
 
@@ -703,21 +706,21 @@ can create space between widgets.
   下面的样例使用 `flex` 值为 1 的 `Spacer` widget，
   分隔最初的两个 `BlueBox` widget。
 
-**1.** Click the **Run** button.
+1. Click the **Run** button.
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add another `Spacer` widget (also with a `flex` value of 1)
-       between the second and third `BlueBox` widgets.
+1. Add another `Spacer` widget (also with a `flex` value of 1)
+   between the second and third `BlueBox` widgets.
 
-       在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。（flex 值仍然为 1）
+   在第二个和第三个 `BlueBox` widget 之间添加另一个 `Spacer` widget。 (flex 值仍然为 1 )
 
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/5a2f539d258eaab33f6f0b19a0ab21c8
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=5a2f539d258eaab33f6f0b19a0ab21c8&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=5a2f539d258eaab33f6f0b19a0ab21c8&amp;theme=dark&amp;split=60&amp;ga_id=creating_more_space" width="100%" height="400px"></iframe>
 
 ## Text widget
 
@@ -742,20 +745,21 @@ for different fonts, sizes, and colors.
   下面的样例将会显示三次"Hey!"，但是使用不同的字体和不同颜色。
   特别指定 `Row` 的 `crossAxisAlignment` 和 `textBaseline` 属性。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change `CrossAxisAlignment.center` to
-       `CrossAxisAlignment.baseline`, and run again.
+1. Change `CrossAxisAlignment.center` to
+   `CrossAxisAlignment.baseline`, and run again.
 
-       将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，然后再次运行。
+   将 `CrossAxisAlignment.center` 改为 `CrossAxisAlignment.baseline`，
+   然后再次运行。
        
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/05d920fd86eb3c253c2a6a8be0fabb01
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=05d920fd86eb3c253c2a6a8be0fabb01&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=05d920fd86eb3c253c2a6a8be0fabb01&amp;theme=dark&amp;split=60&amp;ga_id=align_text" width="100%" height="400px"></iframe>
 
 ## Icon widget
 
@@ -764,7 +768,7 @@ that represents an aspect of the UI.
 Flutter is preloaded with icon packages for
 [Material][] and [Cupertino][] applications.
 
-`Icon` Widget 能够显示图形符号，这代表了 UI 的一个方面。
+`Icon` widget 能够显示图形符号，这代表了 UI 的一个方面。
 Flutter 将会为 [Material][] 和 [Cupertino][]
 的应用提前加载 icon packages。
 
@@ -778,28 +782,29 @@ Flutter 将会为 [Material][] 和 [Cupertino][]
   The following example displays the widget `Icons.widget`
   from the [Material Icon library][] in red and blue.
 
-  下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` Widget。
+  下面的样例显示了来自 [Material Icon library][] 的红蓝 `Icons.widget` widget。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Add another `Icon` from the 
-         [Material Icon library][]
-         with a size of 50.
+1. Add another `Icon` from the 
+   [Material Icon library][]
+   with a size of 50.
 
-       添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
+   添加另一个来自 [Material Icon library][] 的 `Icon` 并将其大小设为 50。
 
-**3.** Give the `Icon` a color of `Colors.amber` from the 
-         [Material Color palette][], and run again.  
+1. Give the `Icon` a color of `Colors.amber` from the 
+   [Material Color palette][], and run again.  
 
-       给 `Icon` 设置一个来自 [Material Color palette][] 的 `Colors.amber` 色，然后再次运行。
+   给 `Icon` 设置一个来自 [Material Color palette][] 的
+   `Colors.amber` 色，然后再次运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/54fa77a90f160c74382f1517d6167fda
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=54fa77a90f160c74382f1517d6167fda&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=54fa77a90f160c74382f1517d6167fda&amp;theme=dark&amp;split=60&amp;ga_id=creating_icon" width="100%" height="400px"></iframe>
 
 ## Image widget
 
@@ -833,26 +838,26 @@ the following example uses an image from the network.
 
   在这个样例中，`Image.network` 包含了一个短小的 URL。
 
-**1.** Click the **Run** button. 
+1. Click the **Run** button. 
 
-       点击**运行**按钮
+   点击**运行**按钮
 
-**2.** Change the short URL to the actual URL: 
+1. Change the short URL to the actual URL: 
 
-       将短 URL 替换为实际 URL：
+   将短 URL 替换为实际 URL：
 
   `https://github.com/flutter/website/blob/master/examples/layout/sizing/images/pic3.jpg?raw=true`
 
-**3.** Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
-         and run again. 
+1. Then change `pic3.jpg` to `pic1.jpg` or `pic2.jpg`, 
+   and run again. 
 
-       然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
+   然后将 `pic3.jpg` 改为 `pic1.jpg` 或 `pic2.jpg`，然后重新运行。
 
 {{site.alert.end}}
 {% comment %}
   Gist: https://gist.github.com/b42464ac4e9bff23ab567721581183aa
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b42464ac4e9bff23ab567721581183aa&amp;theme=dark&amp;split=60&amp;ga_id=display_image" width="100%" height="400px"></iframe>
 
 ## Putting it all together
 
@@ -897,7 +902,7 @@ so it's displayed below the name, title, and icon.
 
 在[第二部分](#part-2)中，你将会在 `Row` 外包裹一个 `Column`，
 所以你的代码中就包含了
-一个 Column（Row（Column））。然后你将调整最外面的`Column`的布局，
+一个 Column (Row (Column) )。然后你将调整最外面的`Column`的布局，
 所以它看起来不错。最后，您将添加联系信息到最外面的`Column`的 children 中，
 所以它将显示在名称，标题和图标下方。
 
@@ -931,7 +936,7 @@ which are positioned below the contact information.
 
   Implement a `Column` that contains two text widgets:
 
-  实现含有两个 Text Widget 的 `Column`：
+  实现含有两个 Text widget 的 `Column`：
 
 <ul markdown="1">
   <li markdown="1">
@@ -958,7 +963,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/c46f9a9f6c99c2c00497df5dbc0b4593
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c46f9a9f6c99c2c00497df5dbc0b4593&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=c46f9a9f6c99c2c00497df5dbc0b4593&amp;theme=dark&amp;split=60&amp;ga_id=name_title" width="100%" height="400px"></iframe>
 
 #### Exercise: Wrap the Column in a Row
 {:.no_toc}
@@ -971,7 +976,7 @@ which are positioned below the contact information.
   Wrap the `Column` you implemented in a
   `Row` that contains the following widgets:
 
-  你将在下面的 Widgets 中实现 `Row` 包裹一个 `Column`：ßß
+  你将在下面的 widgets 中实现 `Row` 包裹一个 `Column`：ßß
 
 <ul markdown="1">
   <li markdown="1">
@@ -994,6 +999,7 @@ which are positioned below the contact information.
   </li>
 </ul>
 
+  <!-- skip -->
   ```dart
      Row(
        children: [
@@ -1009,7 +1015,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/ecf35ee39daf06266363be8fe5aa1d6f
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ecf35ee39daf06266363be8fe5aa1d6f&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=ecf35ee39daf06266363be8fe5aa1d6f&amp;theme=dark&amp;split=60&amp;ga_id=wrap_column" width="100%" height="400px"></iframe>
 
 ### Part 2
 {:.no_toc}
@@ -1050,17 +1056,17 @@ which are positioned below the contact information.
   * A second empty `Row` where you'll add
     four icons (Part 3).
 
-    第二个空的 `Row`，你将会添加四个图标。（第三部分）
+    第二个空的 `Row`，你将会添加四个图标。 (第三部分 )
 
   The `Column`'s list of widgets should be formatted as follows, 
   so the contact information and icons are displayed below the
   name and title:
-
-  `Column` Widget 的列表格式应该如下一样，
+  
+  `Column` widget 的列表格式应该如下一样，
   联系信息和图标显示在名称和头衔下方：
 
+  <!-- skip -->
   ```dart
-
      ],
     ), // <--- Closing parenthesis for the Row
     SizedBox(),
@@ -1076,7 +1082,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/9863fbf7fe192e95b93cfdfb517ac6f5
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=9863fbf7fe192e95b93cfdfb517ac6f5&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=9863fbf7fe192e95b93cfdfb517ac6f5&amp;theme=dark&amp;split=60&amp;ga_id=tweak_layout" width="100%" height="400px"></iframe>
 
 #### Exercise: Enter contact information
 {:.no_toc}
@@ -1110,7 +1116,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/73baebd1bc2e5414921b63d9b0823db0
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=73baebd1bc2e5414921b63d9b0823db0&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=73baebd1bc2e5414921b63d9b0823db0&amp;theme=dark&amp;split=60&amp;ga_id=contact_info" width="100%" height="400px"></iframe>
 
 ### Part 3
 {:.no_toc}
@@ -1145,7 +1151,7 @@ which are positioned below the contact information.
 {% comment %}
   Gist: https://gist.github.com/a24370419412b11e261fea95e8a18774
 {% endcomment %}
-<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=a24370419412b11e261fea95e8a18774&amp;theme=dark&amp;split=60" width="100%" height="400px"></iframe>
+<iframe src="{{site.custom.dartpad.embed-flutter-prefix}}?id=a24370419412b11e261fea95e8a18774&amp;theme=dark&amp;split=60&amp;ga_id=four_icons" width="100%" height="400px"></iframe>
 
 ## What's next?
 

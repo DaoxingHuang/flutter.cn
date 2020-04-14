@@ -15,10 +15,9 @@ but for now use "git clone".
 
     [(loading...)](#){:.download-latest-link-{{os}}.btn.btn-primary}
 
-    For other release channels, and older builds, see the [SDK
-    releases](/docs/development/tools/sdk/releases) page.
+    For other release channels, and older builds, see the [SDK archive][] page.
 
-    要查看其他发行通道和以往的版本，请参阅 [SDK 版本列表](/docs/development/tools/sdk/releases) 页面。
+    要查看其他发行通道和以往的版本，请参阅 [SDK 版本列表][SDK archive][] 页面。
 
  1. Extract the zip file and place the contained `flutter` in the desired
     installation location for the Flutter SDK
@@ -133,6 +132,20 @@ git clone -b stable https://github.com/flutter/flutter.git
     定位并打开 `flutter` 的文件夹，双击运行 **flutter_console.bat** 开始安装。
 
 
+If you don't want to install a fixed version of the installation 
+bundle, you can skip steps 1 and 2. Instead, get the source code 
+from the [Flutter repo][] on 
+GitHub, and change branches or tags as needed. For example:
+
+步骤 1 和 2 可以被替换。如果你不想安装固定版本的安装包。
+Flutter SDK 是免费且开源的，你可以从 GitHub 上的 
+[Flutter repo][] 获取源代码，
+并根据需要更改分支或标签。
+
+```batchfile
+C:\src>git clone https://github.com/flutter/flutter.git -b stable
+```
+
 You are now ready to run Flutter commands in the Flutter Console!
 
 现在你可以在控制台当中使用 Flutter 的命令了。
@@ -186,7 +199,7 @@ are any platform dependencies you need to complete the setup:
 在将 `Path` 变量更新后，打开一个新的控制台窗口，然后将下面的命令输入进去执行。
 如果它提示有任何的平台相关依赖，那么你就需要按照指示完成这些配置：
 
-```console
+```batchfile
 C:\src\flutter>flutter doctor
 ```
 
@@ -221,4 +234,5 @@ verify that you’ve set everything up correctly.
 {% include_relative _analytics.md %}
 
 
-[upgrading Flutter]: /docs/development/tools/sdk/upgrading
+[Flutter repo]: {{site.github}}/flutter/flutter
+[SDK archive]: /docs/development/tools/sdk/archive

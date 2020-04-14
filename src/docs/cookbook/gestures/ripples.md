@@ -1,6 +1,8 @@
 ---
 title: Add Material touch ripples
 title: 添加点按涟漪效果 (Material Design)
+description: How to implement ripple animations.
+description: 如何实现涟漪动画。
 prev:
   title: Focus and text fields
   title: 焦点和文本框
@@ -9,6 +11,9 @@ next:
   title: Handle taps
   title: 捕获和处理点击动作
   path: /docs/cookbook/gestures/handling-taps
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Widgets that follow the Material Design guidelines display
@@ -21,8 +26,7 @@ Flutter provides the [`InkWell`][]
 widget to perform this effect.
 Create a ripple effect using the following steps:
 
-Flutter 提供了 [`InkWell`]({{site.api}}/flutter/material/InkWell-class.html) 
-widget 来实现这个功能。
+Flutter 提供了 [`InkWell`][] widget 来实现这个功能。
 你可以通过以下步骤实现涟漪效果：
 
   1. Create a widget that supports tap.
@@ -51,11 +55,11 @@ InkWell(
 );
 ```
 
-## Complete example
+## Interactive example
 
-### 完整样例
+### 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -108,7 +112,9 @@ class MyButton extends StatelessWidget {
 }
 ```
 
-![Ripples Demo](/images/cookbook/ripples.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/ripples.gif" alt="Ripples Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`InkWell`]: {{site.api}}/flutter/material/InkWell-class.html

@@ -1,6 +1,8 @@
 ---
 title: Adding assets and images
 title: 添加资源和图片
+description: How to use images (and other assets) in your Flutter app.
+description: 如何在你的 Flutter 应用中使用图片或者其他类型的资源。
 short-title: Assets and images
 short-title: 资源和图片
 ---
@@ -44,14 +46,20 @@ specify the directory name with the `/` character at the end:
 ```yaml
 flutter:
   assets:
-    - assets/
+    - directory/
+    - directory/subdirectory/
 ```
 
-Note that only files located directly in the directory are
-included. To add files located in subdirectories,
-create an entry per directory.
+{{site.alert.note}}
 
-注意只包含目录下根节点的所有文件，如果要添加子目录下的文件，需要给每个目录创建节点。
+  Only files located directly in the directory are
+  included. To add files located in subdirectories,
+  create an entry per directory.
+
+  只包含当前目录下的的所有文件。如果想要添加子文件夹中的文件，
+  请为每个目录创建一个条目。
+
+{{site.alert.end}}
 
 ### Asset bundling
 
@@ -61,13 +69,13 @@ The `assets` subsection of the `flutter` section specifies files that
 should be included with the app. Each asset is identified by an
 explicit path (relative to the `pubspec.yaml` file) where the asset
 file is located. The order in which the assets are declared does not
-matter. The actual directory used (`assets` in this case) does not
-matter.
+matter. The actual directory name used (`assets` in first example or others `directory`) 
+does not matter.
 
 该 `assets` 部分的 `flutter` 部分需要指定包含在应用程序中的文件。
 每个资源都通过相对于 `pubspec.yaml` 文件所在位置的路径进行标识。
 资源的声明顺序是无关紧要的。
-资源的实际目录可以是任意文件夹（在本示例中是 `assets`）
+资源的实际目录可以是任意文件夹（在第一个样例中是 `assets`，其他的是 `directory`）
 
 During a build, Flutter places assets into a special archive called
 the _asset bundle_, which apps can read from at runtime.
@@ -428,7 +436,9 @@ AssetManager on Android and NSBundle on iOS.
 
 在不同平台读取 Flutter assets，Android 是通过 AssetManager，iOS 是 NSBundle。
 
-### Android
+### Loading Flutter assets in Android
+
+### 在 Android 中加载 Flutter 资源文件
 
 On Android the assets are available via the [AssetManager API][].
 The lookup key used in, for instance [openFd][], is obtained from
@@ -477,7 +487,9 @@ String key = registrar.lookupKeyForAsset("icons/heart.png");
 AssetFileDescriptor fd = assetManager.openFd(key);
 ```
 
-### iOS
+### Loading Flutter assets in iOS
+
+### 在 iOS 中加载 Flutter 资源文件
 
 On iOS the assets are available via the [mainBundle][].
 The lookup key used in, for instance [pathForResource:ofType:][],
@@ -515,6 +527,31 @@ For a more complete example, see the implementation of the
 Flutter [video_player plugin][].
 
 这有一个更完整的实例可以理解 Flutter 的应用：[video_player plugin][]。
+
+The plugin [ios_platform_images][] on pub.dev wraps up this logic in a
+convenient category.  It allows writing:
+
+pub.dev 上的 [ios_platform_images][] plugin 将这些逻辑封装成方便的类别。
+它允许编写：
+
+**Objective-C:**
+```objective-c
+[UIImage flutterImageWithName:@"icons/heart.png"];
+```
+
+**Swift:**
+```swift
+UIImage.flutterImageNamed("icons/heart.png")
+```
+
+### Loading iOS images in Flutter
+
+### 在 Flutter 中加载 iOS 的图片
+
+When implementing Flutter as
+[Add-to-app](/docs/development/add-to-app/ios/), you might have images hosted in
+iOS which you want to use in Flutter.  For accomplishing that there is a plugin
+available on pub.dev called [ios_platform_images][].
 
 ## Platform assets
 
@@ -607,12 +644,12 @@ Flutter renders the first frame of your application.
 
 {{site.alert.note}}
 
-  This implies that if you don't call [runApp()][] in the
+  This implies that if you don't call [`runApp()`][] in the
   `main()` function of your app (or more specifically, if you don't call
   [`window.render()`][] in response to [`window.onDrawFrame`][]),
   the launch screen persists forever.
 
-  这意味着如果你不在应用程序的 `main()` 方法中调用 [runApp()][] 函数
+  这意味着如果你不在应用程序的 `main()` 方法中调用 [`runApp()`][] 函数
   （或者更具体地说，如果你不调用 [`window.render()`][] 去响应 
   [`window.onDrawFrame`][]的话， 启动页将永远持续显示。
 
@@ -636,9 +673,9 @@ screen in commented code. You can uncomment it or use other
 现有模板提供了一个示例，用于将图片添加到白色启动页的中间（注释代码中）。
 你也可以取消注释使用 [可绘制对象资源][drawables] 来实现预期效果。
 
-For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/add-to-app/android/add-splash-screen).
+For more details, see [Adding a splash screen and launch screen to an Android app](/docs/development/ui/advanced/splash-screen).
 
-更多详细信息，请查看[在 Android 应用中添加闪屏页与启动页](/docs/development/add-to-app/android/add-splash-screen)。
+更多详细信息，请查看 [在 Android 应用中添加闪屏页与启动页](/docs/development/ui/advanced/splash-screen)。
 
 #### iOS
 
@@ -667,8 +704,7 @@ customization using the Interface Builder in
 在 Project Navigator 中导航到 `Runner/Runner` ，然后打开 `Assets.xcassets` 拖入图片，或者
 在 `LaunchScreen.storyboard` 中使用 Interface Builder 进行自定义。
 
-![Adding launch icons in Xcode](/images/assets-and-images/ios-launchscreen-xcode.png)
-![Xcode 中添加启动图](/images/assets-and-images/ios-launchscreen-xcode.png)
+![Xcode 中添加启动图](/images/assets-and-images/ios-launchscreen-xcode.png){:width="95%"}
 
 
 [`AssetBundle`]: {{site.api}}/flutter/services/AssetBundle-class.html
@@ -694,4 +730,6 @@ customization using the Interface Builder in
 [package]: /docs/development/packages-and-plugins/using-packages
 [pathForResource:ofType:]: https://developer.apple.com/documentation/foundation/nsbundle/1410989-pathforresource
 [PluginRegistry.Registrar]: {{site.api}}/javadoc/io/flutter/plugin/common/PluginRegistry.Registrar.html
+[`runApp()`]: {{site.api}}/flutter/widgets/runApp.html
 [video_player plugin]: {{site.pub}}/packages/video_player
+[ios_platform_images]: {{site.pub}}/packages/ios_platform_images

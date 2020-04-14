@@ -1,6 +1,8 @@
 ---
 title: Adding interactivity to your Flutter app
 title: 为你的 Flutter 应用加入交互体验
+description: How to implement a stateful widget that responds to taps.
+description: 如何实现一个能够响应点击事件的有状态 widget。
 short-title: Adding interactivity
 short-title: 交互添加
 diff2html: true
@@ -378,9 +380,12 @@ it. In the same location, create the stateful widget:
          ],
        ),
      );
-@@ -117,2 +108,2 @@
-     );
-   }
+@@ -114,3 +105,5 @@
+           ),
+         ),
+       ],
++    );
++  }
 ```
 
 That's it! When you hot reload the app, the star icon should now respond to taps.

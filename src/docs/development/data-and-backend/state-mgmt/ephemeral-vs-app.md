@@ -3,6 +3,8 @@ title: Differentiate between ephemeral state and app state
 title: 短时 (ephemeral) 和应用 (app) 状态的区别
 short-title: Ephemeral versus app state
 short-title: 区分短时和共享状态
+description: How to tell the difference between ephemeral and app state.
+description: 介绍短时 (ephemeral) 和应用 (app) 状态的区别有哪些。
 prev:
   title: Start thinking declaratively
   title: 声明式的编程思维
@@ -16,7 +18,8 @@ next:
 _This doc introduces app state, ephemeral state,
 and how you might manage each in a Flutter app._
  
-**本文将介绍应用 (app)状态 ，短时 (ephemeral) 状态, 以及在一个 Flutter 应用中你可以如何应用这两种状态**
+本文将介绍应用 (app) 状态 ，短时 (ephemeral) 状态, 
+以及在一个 Flutter 应用中你可以如何应用这两种状态。
 
 In the broadest possible sense, the state of an app is everything that
 exists in memory when the app is running. This includes the app's assets,
@@ -37,17 +40,20 @@ moment in time". Second, the state that you _do_ manage yourself can
 be separated into two conceptual types: ephemeral state and app state.
 
 首先，你不需要管理一些状态（例如纹理），框架本身会替你管理。
-所以对于状态的更有用的定义是“当任何时候你需要重建你的用户界面时你所需要的数据”。
-其次，你需要自己**管理**的状态可以分为两种概念类型：短时 (ephemeral) 状态和应用 (app)状态。
+所以对于状态的更有用的定义是
+“当任何时候你需要重建你的用户界面时你所需要的数据”。
+其次，你需要自己 **管理** 的状态可以分为两种概念类型：
+短时 (ephemeral) 状态和应用 (app) 状态。
 
 ## Ephemeral state
 
 ## 短时状态
 
-Ephemeral state (sometimes called _UI state_ or _local state_) is the state you
-can neatly contain in a single widget.
+Ephemeral state (sometimes called _UI state_ or _local state_)
+is the state you can neatly contain in a single widget.
 
-短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 是你可以完全包含在一个独立 widget 中的状态。
+短时状态 (有时也称 **用户界面(UI)状态** 或者 **局部状态**) 
+是你可以完全包含在一个独立 widget 中的状态。
 
 This is, intentionally, a vague definition, so here are a few examples. 
 
@@ -68,21 +74,23 @@ This is, intentionally, a vague definition, so here are a few examples.
 Other parts of the widget tree seldom need to access this kind of state.
 There is no need to serialize it, and it doesn't change in complex ways.
 
-widget 树中其他部分不需要访问这种状态。不需要去序列化这种状态，这种状态也不会以复杂的方式改变。
+widget 树中其他部分不需要访问这种状态。
+不需要去序列化这种状态，这种状态也不会以复杂的方式改变。
 
-In other words, there is no need to use state management techniques 
-(ScopedModel, Redux, etc.) on this kind of state. All you need is a 
-`StatefulWidget`.
+In other words, there is no need to use state management techniques
+(ScopedModel, Redux, etc.) on this kind of state.
+All you need is a `StatefulWidget`.
 
-换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。你需要用的只是一个 `StatefulWidget`。
+换句话说，不需要使用状态管理架构（例如 ScopedModel, Redux）去管理这种状态。
+你需要用的只是一个 `StatefulWidget`。
 
 Below, you see how the currently selected item in a bottom navigation bar is
-held in the `_index` field of the `_MyHomepageState` class. In this example,
-`_index` is ephemeral state.
+held in the `_index` field of the `_MyHomepageState` class.
+In this example, `_index` is ephemeral state.
 
 在下方你可以看到一个底部导航栏中当前被选中的项目是
-如何被被保存在 `_MyHomepageState` 类 的 `_index` 变量中。在这个例子中， 
-`_index` 是一个短时状态。
+如何被被保存在 `_MyHomepageState` 类的 `_index` 变量中。
+在这个例子中，`_index` 是一个短时状态。
 
 <?code-excerpt "state_mgmt/simple/lib/src/set_state.dart (Ephemeral)" plaster="// ... items ..."?>
 ```dart
@@ -112,21 +120,26 @@ class _MyHomepageState extends State<MyHomepage> {
 Here, using `setState()` and a field inside the StatefulWidget's State
 class is completely natural. No other part of your app needs to access
 `_index`. The variable only changes inside the `MyHomepage` widget.
-And, if the user closes and restarts the app, you don't mind that
-`_index` resets to zero.
+And, if the user closes and restarts the app,
+you don't mind that `_index` resets to zero.
 
-在这里，使用 `setState()` 和一个在有状态 Widget 的 State 类中的变量是很自然的。你的 app 中的其他部分不需要访问 `_index`。
-这个变量只会在 `MyHomepage` widget 中改变。而且， 如果用户关闭并重启这个 app，你不会介意 `_index` 重置回0.
+在这里，使用 `setState()` 和一个在有状态 widget 的 State 类中的变量是很自然的。
+你的 app 中的其他部分不需要访问 `_index`。
+这个变量只会在 `MyHomepage` widget 中改变。
+而且，如果用户关闭并重启这个 app，你不会介意 `_index` 重置回 0.
 
 ## App state
 
 ## 应用状态
 
-State that is not ephemeral, that you want to share across many parts of your 
-app, and that you want to keep between user sessions, is what we call 
-application state (sometimes also called shared state).
+State that is not ephemeral,
+that you want to share across many parts of your app,
+and that you want to keep between user sessions,
+is what we call application state
+(sometimes also called shared state).
 
-如果你想在你的应用中的多个部分之间共享一个非短时的状态，并且在用户会话期间保留这个状态，
+如果你想在你的应用中的多个部分之间共享一个非短时的状态，
+并且在用户会话期间保留这个状态，
 我们称之为应用状态（有时也称共享状态）。
 
 Examples of application state:
@@ -153,9 +166,9 @@ Examples of application state:
 
   一个新闻应用中的文章已读/未读状态
 
-For managing app state, you'll want to research your options. Your choice 
-depends on the complexity and nature of your app, your team's previous 
-experience, and many other aspects. Read on.
+For managing app state, you'll want to research your options.
+Your choice depends on the complexity and nature of your app,
+your team's previous experience, and many other aspects. Read on.
 
 为了管理应用状态，你需要研究你的选项。你的选择取决于你的应用的复杂度和限制，
 你的团队之前的经验以及其他方面。请继续阅读。
@@ -169,8 +182,9 @@ the state in your app. In fact, the Flutter team does this in many
 simple app samples (including the starter app that you get with every
 `flutter create`).
 
-需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。实际上Flutter团队在很多简单的
-示例程序（包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
+需要说明的是，你*可以*使用 `State` 和 `setState()` 管理你的应用中的所有状态。
+实际上Flutter团队在很多简单的示例程序
+（包括你每次使用 `flutter create` 命令创建的初始应用）中正是这么做的。
 
 It goes the other way, too. For example, you might decide that&mdash;in
 the context of your particular app&mdash;the selected tab in a bottom
@@ -183,10 +197,12 @@ In that case, the `_index` variable is app state.
 你可能需要在底部导航栏类的外部来改变这个值，并在对话期间保留它。
 在种情况下 `_index` 就是一个应用状态。 
 
-There is no clear-cut, universal rule to distinguish whether a particular 
-variable is ephemeral or app state. Sometimes, you'll have to refactor one into 
-another. For example, you'll start with some clearly ephemeral state, but as 
-your application grows in features, it will need to be moved to app state.
+There is no clear-cut, universal rule to distinguish
+whether a particular variable is ephemeral or app state.
+Sometimes, you'll have to refactor one into another.
+For example, you'll start with some clearly ephemeral state,
+but as your application grows in features,
+it might need to be moved to app state.
 
 没有一个明确、普遍的规则来区分一个变量属于短时状态还是应用状态，
 有时你不得不在此之间重构。比如，刚开始你认为一些状态是短时状态，
@@ -205,9 +221,10 @@ Source drawing for the png above: : https://docs.google.com/drawings/d/1p5Bvuagi
 When asked about React's setState versus Redux's store, the author of Redux,
 Dan Abramov, replied:
 
-当我们就 React 的 setState 和 Redux 的 Store 哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
+当我们就 React 的 setState 和 Redux 的 Store 
+哪个好这个问题问 Redux 的作者 Dan Abramov 时, 他如此回答:
 
-> "The rule of thumb is: [Do whatever is less awkward][]."
+> "The rule of thumb is: [Do whatever is less awkward]."
 >
 > "经验原则是: [选择能够减少麻烦的方式][Do whatever is less awkward]"
 

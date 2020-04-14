@@ -1,6 +1,8 @@
 ---
 title: Take a picture using the camera
 title: 使用 Camera 插件实现拍照功能
+description: How to use a camera plugin on mobile.
+description: 如何在移动设备上使用 camera 插件。
 prev:
   title: Play and pause a video
   title: 视频的播放和暂停
@@ -108,6 +110,10 @@ Next, get a list of available cameras using the `camera` plugin.
 
 <!-- skip -->
 ```dart
+// Ensure that plugin services are initialized so that `availableCameras()`
+// can be called before `runApp()`
+WidgetsFlutterBinding.ensureInitialized();
+
 // Obtain a list of the available cameras on the device.
 final cameras = await availableCameras();
 
@@ -361,6 +367,10 @@ import 'package:path/path.dart' show join;
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
+  // Ensure that plugin services are initialized so that `availableCameras()`
+  // can be called before `runApp()`
+  WidgetsFlutterBinding.ensureInitialized();
+
   // Obtain a list of the available cameras on the device.
   final cameras = await availableCameras();
 
@@ -499,4 +509,4 @@ class DisplayPictureScreen extends StatelessWidget {
 [`FutureBuilder`]: {{site.api}}/flutter/widgets/FutureBuilder-class.html
 [`path`]: {{site.pub-pkg}}/path
 [`path_provider`]: {{site.pub-pkg}}/path_provider
-[`takePicture()`]: {{site.pub-api}}/camera/latest/camera/CameraController/takePicture.html
+[`takePicture()`]: {{site.pub-pkg}}/camera/latest/camera/CameraController/takePicture.html

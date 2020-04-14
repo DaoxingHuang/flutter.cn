@@ -54,7 +54,7 @@ attach an instance of `FlutterFragment` in `onCreate()` within the
 
 {% samplecode add-fragment %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 public class MyActivity extends FragmentActivity {
     // Define a tag String to represent the FlutterFragment within this
@@ -100,7 +100,7 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 class MyActivity : FragmentActivity() {
   companion object {
@@ -156,7 +156,7 @@ forwarded from your host `Activity` to `FlutterFragment`. These calls are shown 
 
 {% samplecode forward-activity-calls %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 public class MyActivity extends FragmentActivity {
     @Override
@@ -201,7 +201,7 @@ public class MyActivity extends FragmentActivity {
 }
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 class MyActivity : FragmentActivity() {
   override fun onPostResume() {
@@ -261,7 +261,7 @@ To use a pre-warmed `FlutterEngine` in a `FlutterFragment`, instantiate a
 
 {% samplecode use-prewarmed-engine %}
 {% sample Java %}
-<?code-excerpt "MyApplication.java" title?>
+<!--code-excerpt "MyApplication.java" title-->
 ```java
 // Somewhere in your app, before your FlutterFragment is needed, like in the
 // Application class ...
@@ -279,12 +279,12 @@ FlutterEngineCache
   .put("my_engine_id", flutterEngine);
 ```
 
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 flutterFragment.withCachedEngine("my_engine_id").build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyApplication.kt" title?>
+<!--code-excerpt "MyApplication.kt" title-->
 ```kotlin
 // Somewhere in your app, before your FlutterFragment is needed, like in the
 // Application class ...
@@ -302,7 +302,7 @@ FlutterEngineCache
   .put("my_engine_id", flutterEngine)
 ```
 
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 flutterFragment.withCachedEngine("my_engine_id").build()
 ```
@@ -314,15 +314,19 @@ pre-warmed `FlutterEngine` based on the ID given to `withCachedEngine()`.
 By providing a pre-warmed `FlutterEngine`, as previously shown, your app renders the
 first Flutter frame as quickly as possible.
 
+#### Initial route with a cached engine
+
+{% include_relative _initial-route-cached-engine.md %}
+
 ## Display a splash screen
 
 The initial display of Flutter content requires some wait time, even if a
 pre-warmed `FlutterEngine` is used. To help improve the user experience around
 this brief waiting period, Flutter supports the display of a splash screen until
 Flutter renders its first frame. For instructions about how to show a splash screen,
-see the [Android splash screen guide].
+see the [splash screen guide].
 
-[Android splash screen guide]: /docs/development/add-to-app/android/add-splash-screen
+[splash screen guide]: /docs/development/ui/advanced/splash-screen
 
 ## Run Flutter with a specified initial route
 
@@ -334,7 +338,7 @@ initial routes (routes other than `/`). To facilitate this, `FlutterFragment`'s
 
 {% samplecode launch-with-initial-route %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -342,7 +346,7 @@ FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -370,14 +374,14 @@ execute for the given Flutter experience. To specify an entrypoint, build
 
 {% samplecode launch-with-custom-entrypoint %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
     .build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 val flutterFragment = FlutterFragment.withNewEngine()
     .dartEntrypoint("mySpecialEntrypoint")
@@ -412,7 +416,7 @@ of `SurfaceView`. Select a `TextureView` by building a `FlutterFragment` with a
 
 {% samplecode launch-with-rendermode %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 // With a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -425,7 +429,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 // With a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -471,7 +475,7 @@ configuration:
 
 {% samplecode launch-with-transparency %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -484,7 +488,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()
@@ -528,7 +532,7 @@ shown: 9
 
 {% samplecode attach-to-activity %}
 {% sample Java %}
-<?code-excerpt "MyActivity.java" title?>
+<!--code-excerpt "MyActivity.java" title-->
 ```java
 // Using a new FlutterEngine.
 FlutterFragment flutterFragment = FlutterFragment.withNewEngine()
@@ -541,7 +545,7 @@ FlutterFragment flutterFragment = FlutterFragment.withCachedEngine("my_engine_id
     .build();
 ```
 {% sample Kotlin %}
-<?code-excerpt "MyActivity.kt" title?>
+<!--code-excerpt "MyActivity.kt" title-->
 ```kotlin
 // Using a new FlutterEngine.
 val flutterFragment = FlutterFragment.withNewEngine()

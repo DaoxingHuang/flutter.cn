@@ -1,6 +1,8 @@
 ---
 title: Fade a widget in and out
 title: Widget 的淡入淡出效果
+description: How to fade a widget in and out.
+description: 如何淡入淡出一个 widget。
 prev:
   title: Animate the properties of a Container
   title: Container 里的动画渐变效果
@@ -9,6 +11,9 @@ next:
   title: Add a Drawer to a screen
   title: 在屏幕上添加一个 Drawer
   path: /docs/cookbook/design/drawer
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 UI developers often need to show and hide elements on screen.
@@ -17,12 +22,15 @@ feel jarring to end users. Instead,
 fade elements in and out with an opacity animation to create
 a smooth experience.
 
-在实现 UI 设计时，我们经常需要在屏幕上显示或隐藏各种元素。如若这个过程只是让某个元素快速地出现或者消失，用户们肯定不买帐。我们一般会使用不透明动画让元素淡入淡出，以创建出更加流畅的用户体验。
+在实现 UI 设计时，我们经常需要在屏幕上显示或隐藏各种元素。
+如若这个过程只是让某个元素快速地出现或者消失，用户们肯定不买帐。
+我们一般会使用不透明动画让元素淡入淡出，以创建出更加流畅的用户体验。
 
 The [`AnimatedOpacity`][] widget makes it easy to perform opacity
 animations. This recipe uses the following steps:
 
-在 Flutter 中，你可以使用 [`AnimatedOpacity`][] widget 来完成这个效果，请参见下面的步骤：
+在 Flutter 中，你可以使用 [`AnimatedOpacity`][] widget 来完成这个效果，
+请参见下面的步骤：
 
 ## Directions
 
@@ -212,11 +220,11 @@ AnimatedOpacity(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -285,7 +293,9 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 ```
 
-![Fade In and Out Demo (一个淡入淡出的例子)](/images/cookbook/fade-in-out.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/fade-in-out.gif" alt="Fade In and Out Demo (一个淡入淡出的例子)" class="site-mobile-screenshot" />
+</noscript>
 
 [`AnimatedOpacity`]: {{site.api}}/flutter/widgets/AnimatedOpacity-class.html
 [Gestures]: /docs/cookbook#gestures

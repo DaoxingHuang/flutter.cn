@@ -1,6 +1,8 @@
 ---
 title: Handle changes to a text field
 title: 响应文本框内容的更改
+description: How to detect changes to a text field.
+description: 如何检测文本框内容的更改。
 prev:
   title: Create and style a text field
   title: 文本框的创建和设定
@@ -9,6 +11,9 @@ next:
   title: Retrieve the value of a text field
   title: 获取文本框的输入值
   path: /docs/cookbook/forms/retrieve-input
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In some cases, it's useful to run a callback function every time the text
@@ -17,7 +22,8 @@ screen with autocomplete functionality where you want to update the
 results as the user types.
 
 在某些情境中，我们可能需要在每次文本框的文本内容变化时都调用回调函数。
-例如，当构建一个有自动填充功能的搜索页面时，我们希望根据用户输入的内容来更新返回的结果。
+例如，当构建一个有自动填充功能的搜索页面时，
+我们希望根据用户输入的内容来更新返回的结果。
 
 How do you run a callback function every time the text changes?
 With Flutter, you have two options:
@@ -43,7 +49,6 @@ Whenever the text changes, the callback is invoked.
 
 最简单的方法是给 [`TextField`][] 绑定 [`onChanged()`][] 回调。
 每当文本内容改变时，回调函数会被触发。
-但这种方法有一个缺点，它不适用于 [`TextFormField`][] 组件。
 
 In this example, print the current value of the text field to the
 console every time the text changes.
@@ -213,11 +218,11 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());

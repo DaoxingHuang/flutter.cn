@@ -1,10 +1,15 @@
 ---
 title: Animate a page route transition
 title: 为页面切换加入动画效果
+description: How to animate from one page to another.
+description: 如何在页面过渡之间使用动画。
 next:
   title: Animate a widget using a physics simulation
   title: 在物理模拟器上构建动画
   path: /docs/cookbook/animation/physics-simulation
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 A design language, such as Material, defines standard behaviors when
@@ -17,12 +22,12 @@ This recipe shows how to transition between
 routes by animating the new route into view from
 the bottom of the screen.
 
-在不同路由（或界面）之间进行切换的时候，许多设计语言，例如 Material 设计，都定义了一些标准行为。
-但有时自定义路由会让 app 看上去更加的独特。为了更好的完成这一点，
-[PageRouteBuilder]({{site.api}}/flutter/widgets/PageRouteBuilder-class.html)
-提供了一个 [Animation]({{site.api}}/flutter/animation/Animation-class.html) 对象。
-这个 `Animation` 能够通过结合 [Tween]({{site.api}}/flutter/animation/Tween-class.html) 以及
-[Curve]({{site.api}}/flutter/animation/Curve-class.html) 对象来自定义路由转换动画。
+在不同路由（或界面）之间进行切换的时候，许多设计语言，
+例如 Material 设计，都定义了一些标准行为。
+但有时自定义路由会让 app 看上去更加的独特。
+为了更好的完成这一点，[`PageRouteBuilder`][] 提供了一个 [`Animation`][] 对象。
+这个 `Animation` 能够通过结合
+[`Tween`][] 以及 [`Curve`][] 对象来自定义路由转换动画。
 这篇指南将会展示如何在两个路由之间切换时使用从屏幕底部动画出来的路由。
 
 To create a custom page route transition, this recipe uses the following steps:
@@ -68,17 +73,20 @@ To start, use a [`PageRouteBuilder`][] to create a [`Route`][].
   route is built. The framework can avoid extra work because `child` stays the
   same throughout the transition.
   
-  transitionsBuilder 的 `child` 参数是通过 pageBuilder 方法来返回一个 transitionsBuilder widget。
-  这个 `pageBuilder` 方法仅会在第一次构建路由的时候被调用。框架能够自动避免做额外的工作，
-  因为整个过渡期间 `child` 保存了同一个实例。
+  transitionsBuilder 的 `child` 参数是通过 `pageBuilder` 方法
+  来返回一个 transitionsBuilder widget，这个 `pageBuilder` 方法仅会在
+  第一次构建路由的时候被调用。框架能够自动避免做额外的工作，因为
+  整个过渡期间 `child` 保存了同一个实例。
   
 {{site.alert.end}}
 
 The following example creates two routes: a home route with a "Go!" button, and
 a second route titled "Page 2".
 
-下面的样例将会创建两个路由：一个主页路由，包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
+下面的样例将会创建两个路由：一个主页路由，
+包含了 "Go!" 按钮，还有第二个路由，包含了一个显示 "Page 2 的标题。
 
+<!-- skip -->
 ```dart
 import 'package:flutter/material.dart';
 
@@ -136,9 +144,10 @@ constructor). In this case, the Offset is a 2D vector for the
 Setting the `dy` argument to 1 represents a vertical translation one
 full height of the page.
 
-为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。（通常我们会使用 `Offset.zero` 构造器。）
-在这个情况下，对于 [FractionalTranslation]({{site.api}}/flutter/widgets/FractionalTranslation-class.html)
-widget 来说偏移量是一个 2D 矢量值。将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
+为了使新页面从底部动画出来，它应该从 `Offset(0,1)` 到 `Offset(0, 0)` 进行动画。
+（通常我们会使用 `Offset.zero` 构造器。）在这个情况下，
+对于 ['FractionalTranslation'][] widget 来说偏移量是一个 2D 矢量值。
+将 `dy` 参数设为 1，这代表在竖直方向上切换整个页面的高度。
 
 The `transitionsBuilder` callback has an `animation` parameter. It's an
 `Animation<double>` that produces values between 0 and 1. Convert the
@@ -148,6 +157,7 @@ Animation<double> into an Animation<Offset> using a Tween:
 它其实是一个 `Animation<double>`，提供 0 到 1 的值。
 使用 Tween 来将 Animation<double> 转为 Animation<Offset>。
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -178,6 +188,7 @@ with the `Animation<Offset>` and the child widget:
 AnimatedWidget 返回了一个 带有 `Animation<Offset>` 
 的 [`SlideTransition`][]，以及 child widget：
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -212,6 +223,7 @@ and pass it a Curve:
 
 要使用 Curve，创建一个 [`CurveTween`][] 并传一个 Curve：
 
+<!-- skip -->
 ```dart
 var curve = Curves.ease;
 var curveTween = CurveTween(curve: curve);
@@ -231,6 +243,7 @@ use [`chain()`][]:
 
 为了结合两个 tween，请使用 [`chain()`][]:
 
+<!-- skip -->
 ```dart
 var begin = Offset(0.0, 1.0);
 var end = Offset.zero;
@@ -242,9 +255,11 @@ var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 Then use this tween by passing it to `animation.drive()`. This creates a new
 `Animation<Offset>` that can be given to the `SlideTransition` widget:
 
-它们通过把这个 tween 传递给 `animation.drive()` 来创建一个新的 `Animation<Offset>`，
+它们通过把这个 tween 传递给 `animation.drive()` 
+来创建一个新的 `Animation<Offset>`，
 然后你就能把它传给 `SlideTransition` widget：
 
+<!-- skip -->
 ```dart
 return SlideTransition(
   position: animation.drive(tween),
@@ -278,6 +293,7 @@ Another way to create an `Animation<Offset>` with an easing curve is to use a
 
 使用缓动曲线创建 `Animation<Offset>` 的另一种方法是使用 `CurvedAnimation`：
 
+<!-- skip -->
 ```dart
 transitionsBuilder: (context, animation, secondaryAnimation, child) {
   var begin = Offset(0.0, 1.0);
@@ -297,11 +313,11 @@ transitionsBuilder: (context, animation, secondaryAnimation, child) {
 }
 ```
 
-## Complete Example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 main() {
@@ -355,8 +371,9 @@ class Page2 extends StatelessWidget {
   }
 }
 ```
-
-![Demo showing a custom page route transition animating up from the bottom of the screen](/images/cookbook/page-route-animation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/page-route-animation.gif" alt="Demo showing a custom page route transition animating up from the bottom of the screen（样例展示了一个自底向上的路由转换动画）" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AnimatedWidget`]: {{site.api}}/flutter/widgets/AnimatedWidget-class.html

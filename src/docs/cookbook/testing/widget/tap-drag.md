@@ -1,6 +1,8 @@
 ---
 title: Tap, drag, and enter text
 title: 点击、拖拽事件和文本输入
+description: How to test widgets for user interaction.
+description: 如何测试与用户交互的 widgets。
 prev:
   title: Find widgets
   title: 定位到目标 widgets
@@ -218,7 +220,7 @@ testWidgets('Add and remove a todo', (WidgetTester tester) async {
 After entering text into the `TextField`, ensure that tapping
 the `FloatingActionButton` adds the item to the list.
 
-在 `TextField` 中输入文本后，需要确保能够点击 `FloatingActionButton`，将文本作为清淡项加入列表中。
+在 `TextField` 中输入文本后，需要确保能够点击 `FloatingActionButton`，将文本作为清单项加入列表中。
 
 This involves three steps:
 

@@ -1,6 +1,8 @@
 ---
 title: Work with tabs
 title: 使用 tabs
+description: How to implement tabs in a layout.
+description: 如何实现 tab 布局。
 prev:
   title: Use themes to share colors and font styles
   title: 使用 Themes 统一颜色和字体风格
@@ -9,14 +11,18 @@ next:
   title: Build a form with validation
   title: 构建一个有验证判断的表单
   path: /docs/cookbook/forms/validation
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
-Working with tabs is a common pattern in apps that follow the Material Design
-guidelines. Flutter includes a convenient way to create tab layouts as part of
+Working with tabs is a common pattern in apps that follow the
+Material Design guidelines.
+Flutter includes a convenient way to create tab layouts as part of
 the [material library][].
 
 在 Material Design 设计准则里，tabs 是一种常用的布局模型。
-Flutter 自带的 [Material 库]({{site.api}}/flutter/material/material-library.html) 
+Flutter 自带的 [Material 库][material library] 
 可以帮助开发者们非常便捷的创建 tab 布局。
 
 {{site.alert.note}}
@@ -157,11 +163,11 @@ TabBarView(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -199,7 +205,9 @@ class TabBarDemo extends StatelessWidget {
 }
 ```
 
-![Tabs Demo](/images/cookbook/tabs.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/tabs.gif" alt="Tabs Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`AppBar`]: {{site.api}}/flutter/material/AppBar-class.html

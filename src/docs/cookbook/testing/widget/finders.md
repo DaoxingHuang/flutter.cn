@@ -1,6 +1,8 @@
 ---
 title: Find widgets
 title: 定位到目标 Widgets
+description: How to use the Finder classes for testing widgets.
+description: 如何在 widget 测试中使用 Finder 类。
 prev:
   title: An introduction to widget testing
   title: Widget 测试介绍
@@ -192,7 +194,7 @@ void main() {
 ```
 
 
-[`CommonFinders` documentation]: {{api}}/flutter_driver/CommonFinders-class.html
+[`CommonFinders` documentation]: {{api}}/flutter_test/CommonFinders-class.html
 [`find`]: {{api}}/flutter_test/find-constant.html
 [`flutter_test`]: {{api}}/flutter_test/flutter_test-library.html
 [Introduction to widget testing]: /docs/cookbook/testing/widget/introduction

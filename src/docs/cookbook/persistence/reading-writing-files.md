@@ -1,6 +1,8 @@
 ---
 title: Read and write files
 title: 文件读写
+description: How to read from and write to files on disk.
+description: 如何读写硬盘上的文件。
 prev:
   title: Persist data with SQLite
   title: 用 SQLite 做数据持久化
@@ -56,21 +58,24 @@ Where should you store this data?
 这个例子里，我们将会显示一个计数器，当计数器发生变化时，你将在磁盘中写入数据，
 以便在应用加载时重新读取这些数据。因此，你一定想知道：我应该将这些数据存储在哪里？
 
-The [`path_provider`][] plugin
+The [`path_provider`][] package
 provides a platform-agnostic way to access commonly used locations on the
 device's file system. The plugin currently supports access to
 two file system locations:
+
+[`path_provider`][] package 提供一种平台无关的方式以一致的方式访问设备的文件位置系统。
+该 plugin 当前支持访问两种文件位置系统：
 
 *Temporary directory*
 <br> A temporary directory (cache) that the system can
   clear at any time. On iOS, this corresponds to the
   [`NSCachesDirectory`][]. On Android, this is the value that
-  [`getCacheDir()`][]) returns.
+  [`getCacheDir()`][] returns.
 
 *临时文件夹：* 
 <br> 这是一个系统可以随时清空的临时（缓存）文件夹。
   在 iOS 上 对应 [`NSCachesDirectory`][] 的返回值；
-  在 Android 上对应 [`getCacheDir()`][]) 的返回值。
+  在 Android 上对应 [`getCacheDir()`][] 的返回值。
 
 *Documents directory*
 <br> A directory for the app to store files that only

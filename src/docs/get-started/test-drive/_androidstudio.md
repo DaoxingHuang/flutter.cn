@@ -45,9 +45,11 @@
   The package name can’t be changed once the app is released,
   so make the name unique.
   
-  每当创建一个新的 Flutter 应用时候，一些 Flutter IDE 插件会请你输入一个类似 `com.example`
-  的包名 (package name)，包名（在 iOS 里叫套装 ID）一般都是把公司域名的反着写了。
-  如果你的应用打算上架商店，建议一开始的时候把这个全网唯一的包名设置好，因为应用上架之后就不能再修改了。
+  每当创建一个新的 Flutter 应用时候，
+  一些 Flutter IDE 插件会请你输入一个类似 `com.example` 的包名 (package name)，
+  包名（在 iOS 里叫套装 ID）一般都是把公司域名的反着写了。
+  如果你的应用打算上架商店，建议一开始的时候把这个全网唯一的包名设置好，
+  因为应用上架之后就不能再修改了。
   
 {{site.alert.end}}
 
@@ -55,7 +57,7 @@ The above commands create a Flutter project directory called `myapp` that
 contains a simple demo app that uses [Material Components][].
 
 上面的步骤会创建一个叫做 myapp 的 Flutter 项目目录，
-里面会包含一个用到 [Material 组件][] 的简单的示例程序。
+里面会包含一个用到 [Material 组件][Material Components] 的简单的示例程序。
 
 {% include_relative _main-code-note.md  %}
 
@@ -73,11 +75,23 @@ contains a simple demo app that uses [Material Components][].
 
     在 **目标选择器**， 选择一个 Android 设备来运行程序。
     如果列表里没有可用设备，选择 **工具 > Android > AVD Manager
-    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见 [管理 AVDs][]。
+    然后在这个窗口中创建一个新的虚拟机。更多详细介绍，参见 [管理 AVDs][Managing AVDs]。
     
  1. Click the run icon in the toolbar, or invoke the menu item **Run > Run**.
-
+ 
     点击工具栏中的 Run 图标，或者在菜单中选择 **Run > Run**。
+
+
+{{site.alert.warning}}
+
+  When launching your app from a Mac, if you see
+  `ERROR: Could not connect to lockdownd, error code -17`,
+  make sure that you have [trusted your computer][].
+  
+  当在 Mac 电脑上运行你的应用时，如果看到这个错误提示：
+  `ERROR: Could not connect to lockdownd, error code -17`，
+  请确保设定了 [受信任的电脑选项][trusted your computer]。
+{{site.alert.end}}
 
 {% capture save_changes -%}
  : invoke **Save All**, or click **Hot Reload**
@@ -104,9 +118,8 @@ contains a simple demo app that uses [Material Components][].
 {% include_relative _try-hot-reload.md save_changes=save_changes %}
 {% include run-profile.md ide_profile=ide_profile %}
 
-[Main IntelliJ toolbar]: {% asset tools/android-studio/main-toolbar.png @path %}
-[Managing AVDs]: {{site.android-dev}}/studio/run/managing-avds
-[Material Components]: {{site.material}}/guidelines
-[管理 AVDs]: {{site.android-dev}}/studio/run/managing-avds
-[Material 组件]: {{site.material}}/guidelines
+[trusted your computer]: /docs/get-started/install/macos#trust
 </div>
+
+
+

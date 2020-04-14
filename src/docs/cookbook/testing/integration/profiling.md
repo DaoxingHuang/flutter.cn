@@ -1,6 +1,8 @@
 ---
 title: Performance profiling
 title: 性能分析
+description: How to profile performance for a Flutter app.
+description: 本篇将如何测量你的 Flutter 应用的性能。
 prev:
   title: An introduction to integration testing
   title: Flutter 集成测试介绍
@@ -45,15 +47,15 @@ This recipe uses the following steps:
 
 1. Write a test that scrolls through a list of items.
   
- 	 编写一个滚动列表的测试项目；
+   编写一个滚动列表的测试项目；
  	 		
 1. Record the performance of the app.
   
- 	 记录应用程序的性能；
+   记录应用程序的性能；
  
 1. Save the results to disk.
 	 
- 	 将结果保存到磁盘；
+   将结果保存到磁盘；
   	
 1. Run the test.
   
@@ -61,7 +63,7 @@ This recipe uses the following steps:
   	 
 1. Review the results.
   
- 	 检查结果。
+   检查结果。
 
 ### 1. Write a test that scrolls through a list of items
 

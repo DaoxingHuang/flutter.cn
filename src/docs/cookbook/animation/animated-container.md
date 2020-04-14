@@ -1,13 +1,18 @@
 ---
 title: Animate the properties of a container
 title: Container 里的动画渐变效果
+description: How to animate properties of a container using implicit animations.
+description: 如何通过控制 container 的属性以使用隐式动画。
 prev:
-  title: Animate a widget using a physics simulation
+  title: Widget 的物理模拟动画效果
   path: /docs/cookbook/animation/physics-simulation
 next:
   title: Fade a Widget in and out
   title: Widget 的淡入淡出效果
   path: /docs/cookbook/animation/opacity-animation
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 The [`Container`][] class provides a convenient way
@@ -192,11 +197,11 @@ FloatingActionButton(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -271,7 +276,10 @@ class _AnimatedContainerAppState extends State<AnimatedContainerApp> {
 }
 ```
 
-![AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius(这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子)](/images/cookbook/animated-container.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/animated-container.gif" alt="AnimatedContainer demo showing a box growing and shrinking in size while changing color and border radius(这个 AnimatedContainer demo 展示了一个通过动画改变颜色、边框半径、放大和缩小的盒子)" class="site-mobile-screenshot" />
+</noscript>
+
 
 [`AnimatedContainer`]: {{site.api}}/flutter/widgets/AnimatedContainer-class.html
 [`Container`]: {{site.api}}/flutter/widgets/Container-class.html

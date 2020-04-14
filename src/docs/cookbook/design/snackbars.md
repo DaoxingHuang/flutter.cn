@@ -13,6 +13,9 @@ next:
   title: Export fonts from a package
   title: 以 package 的方式使用字体
   path: /docs/cookbook/design/package-fonts
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 It can be useful to briefly inform your users when certain actions
@@ -112,13 +115,14 @@ the message.
 在某些情况下，我们可能想在显示 SnackBar 的时候给用户提供一个附加的操作。
 比如，当他们意外的删除了一个消息，我们可以提供一个撤销更改的操作。
 
-To achieve this, we can provide an additional `action` to the `SnackBar` Widget.
+To achieve this, we can provide an additional `action` to the `SnackBar` widget.
 
 Here's an example of providing
 an additional `action` to the `SnackBar` widget:
 
 这个例子里，我们在创建 `SnackBar` widget 的时候提供一个附加的 `action ` 参数。
 
+<!-- skip -->
 ```dart
 final snackBar = SnackBar(
   content: Text('Yay! A SnackBar!'),
@@ -131,9 +135,10 @@ final snackBar = SnackBar(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
+
 {{site.alert.note}}
 
   In this example, the SnackBar displays when a user taps a button.
@@ -146,7 +151,7 @@ final snackBar = SnackBar(
   
 {{site.alert.end}}
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(SnackBarDemo());
@@ -193,7 +198,9 @@ class SnackBarPage extends StatelessWidget {
 }
 ```
 
-![SnackBar Demo](/images/cookbook/snackbar.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/snackbar.gif" alt="SnackBar Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Gestures]: /docs/cookbook#gestures

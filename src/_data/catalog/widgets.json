@@ -388,6 +388,16 @@
     "image": "<img alt='' src='/images/widget-catalog/cupertino-button.png'>"
   },
   {
+    "name": "CupertinoContextMenu",
+    "description": "An iOS-style full-screen modal route that opens when the child is long-pressed. Used to display relevant actions for your content.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoContextMenu-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-context-menu.png'>"
+  },
+  {
     "name": "CupertinoDatePicker",
     "description": "An iOS-style date or date and time picker.",
     "categories": [
@@ -506,6 +516,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlider-class.html",
     "image": "<img alt='' src='/images/widget-catalog/cupertino-slider.png'>"
+  },
+  {
+    "name": "CupertinoSlidingSegmentedControl",
+    "description": "An iOS-13-style segmented control. Used to select mutually exclusive options in a horizontal list.",
+    "categories": [
+      "Cupertino (iOS-style widgets)"
+    ],
+    "subcategories": [],
+    "link": "https://api.flutter.dev/flutter/cupertino/CupertinoSlidingSegmentedControl-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/cupertino-sliding-segmented-control.png'>"
   },
   {
     "name": "CupertinoSwitch",
@@ -1121,6 +1141,16 @@
     "subcategories": [],
     "link": "https://api.flutter.dev/flutter/widgets/Opacity-class.html",
     "image": "<svg viewBox='0 0 100 100'><rect x='0' y='0' width='100' height='100' fill='#3949ab'/><rect x='10' y='10' width='60' height='60' fill='#3b75ad'/><rect x='20' y='30' width='70' height='50' fill='#ffffff' opacity='0.8'/></svg>"
+  },
+  {
+    "name": "OutlineButton",
+    "description": "A medium-emphasis button for secondary actions that are important but are not the primary action in an app.",
+    "categories": [],
+    "subcategories": [
+      "Buttons"
+    ],
+    "link": "https://api.flutter.dev/flutter/material/OutlineButton-class.html",
+    "image": "<img alt='' src='/images/widget-catalog/material-outline-button.png'>"
   },
   {
     "name": "OverflowBox",

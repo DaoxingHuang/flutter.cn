@@ -1,6 +1,8 @@
 ---
 title: Update the UI based on orientation
 title: 根据屏幕方向更新界面
+description: Respond to a change in the screen's orientation.
+description: 根据屏幕方向自适应界面。
 prev:
   title: Exporting fonts from a package
   title: 以 package 的方式使用字体
@@ -9,6 +11,9 @@ next:
   title: Use custom fonts
   title: 使用自定义字体
   path: /docs/cookbook/design/fonts
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In some situations,
@@ -112,11 +117,11 @@ OrientationBuilder(
 
 {{site.alert.end}}
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-500px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -169,7 +174,9 @@ class OrientationList extends StatelessWidget {
 }
 ```
 
-![Orientation Demo](/images/cookbook/orientation.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/orientation.gif" alt="Orientation Demo（屏幕方向适配样例）" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Creating a grid list]: /docs/cookbook/lists/grid-lists

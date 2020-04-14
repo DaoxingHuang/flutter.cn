@@ -1,13 +1,19 @@
 ---
 title: Create lists with different types of items
 title: 创建拥有不同列表项的列表
+description: How to implement a list that contains different types of assets.
+description: 如何实现一个包含不同类型资源的列表。
 prev:
   title: Create a grid list
   title: 创建一个网格列表
   path: /docs/cookbook/lists/grid-lists
 next:
   title: Place a floating app bar above a list
+  title: 在列表顶部放置一个浮动的 app bar
   path: /docs/cookbook/lists/floating-app-bar
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 You might need to create lists that display different types of content.
@@ -15,13 +21,13 @@ For example, you might be working on a list that shows a heading
 followed by a few items related to the heading, followed by another heading,
 and so on.
 
-我们经常需要创建展示不同类型内容的列表。比方说，我们可能在开发一个列表，它显示一个标题，
+我们经常需要创建展示不同类型内容的列表。
+比方说，我们可能在开发一个列表，它显示一个标题，
 后跟一些与标题相关的项目，然后是另一个标题，依此类推。
 
 Here's how you can create such a structure with Flutter:
 
 你可以通过以下步骤，用 Flutter 创建这样的结构：
-
 
   1. Create a data source with different types of items.
 
@@ -29,7 +35,7 @@ Here's how you can create such a structure with Flutter:
 
   2. Convert the data source into a list of widgets.
 
-     把数据源转换成一个包含 Widget 的 List
+     将数据源的数据转换成列表 widget
 
 ## 1. Create a data source with different types of item
 
@@ -53,22 +59,41 @@ and `MessageItem`.
 
 <!-- skip -->
 ```dart
-// The base class for the different types of items the list can contain.
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
@@ -86,7 +111,9 @@ contains a header followed by five messages. Each message has one
 of 3 types: `ListItem`, `HeadingItem`, or `MessageItem`.
 
 对于这个例子来说，我们将生成一个要使用的项目列表。
-这个列表将包含一个标题，后跟五条消息。每条消息都属于以下三种类型中的一种： `ListItem`、`HeadingItem` 或者是 `MessageItem`。
+这个列表将包含一个标题，后跟五条消息。
+每条消息都属于以下三种类型中的一种： `ListItem`、`HeadingItem` 
+或者是 `MessageItem`。
 
 <!-- skip -->
 ```dart
@@ -100,20 +127,20 @@ final items = List<ListItem>.generate(
 
 ## 2. Convert the data source into a list of widgets
 
-## 2. 把数据源转换成 Widget 的 List
+## 2. 将数据源的数据转换成列表 widget
 
 To convert each item into a widget,
 use the [`ListView.builder()`][] constructor.
 
-为了把每一个项目转换成 Widget，
-我们将采用 [`ListView.builder`]({{site.api}}/flutter/widgets/ListView/ListView.builder.html) 构造方法。
+为了把每一个项目转换成 widget，
+我们将采用 [`ListView.builder()`][] 构造方法。
 
 In general, provide a builder function that checks for what type
 of item you're dealing with, and returns the appropriate widget
 for that type of item.
 
 通常，我们需要提供一个 builder 函数来确定我们正在处理的项目类型，
-并返回该类型项目的相应 Widget。
+并返回该类型项目的相应 widget。
 
 This example uses the `is` keyword to check the type of item.
 It's fast, and automatically casts each item to the appropriate type.
@@ -134,28 +161,19 @@ ListView.builder(
   itemBuilder: (context, index) {
     final item = items[index];
 
-    if (item is HeadingItem) {
-      return ListTile(
-        title: Text(
-          item.heading,
-          style: Theme.of(context).textTheme.headline,
-        ),
-      );
-    } else if (item is MessageItem) {
-      return ListTile(
-        title: Text(item.sender),
-        subtitle: Text(item.body),
-      );
-    }
+    return ListTile(
+      title: item.buildTitle(context),
+      subtitle: item.buildSubtitle(context),
+    );
   },
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -193,19 +211,10 @@ class MyApp extends StatelessWidget {
           itemBuilder: (context, index) {
             final item = items[index];
 
-            if (item is HeadingItem) {
-              return ListTile(
-                title: Text(
-                  item.heading,
-                  style: Theme.of(context).textTheme.headline,
-                ),
-              );
-            } else if (item is MessageItem) {
-              return ListTile(
-                title: Text(item.sender),
-                subtitle: Text(item.body),
-              );
-            }
+            return ListTile(
+              title: item.buildTitle(context),
+              subtitle: item.buildSubtitle(context),
+            );
           },
         ),
       ),
@@ -213,28 +222,47 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// The base class for the different types of items the list can contain.
-// List 能容纳的不同类型项目的基类
-abstract class ListItem {}
+/// The base class for the different types of items the list can contain.
+abstract class ListItem {
+  /// The title line to show in a list item.
+  Widget buildTitle(BuildContext context);
 
-// A ListItem that contains data to display a heading.
-// 一种包含展示标题数据的 ListItem
+  /// The subtitle line, if any, to show in a list item.
+  Widget buildSubtitle(BuildContext context);
+}
+
+/// A ListItem that contains data to display a heading.
 class HeadingItem implements ListItem {
   final String heading;
 
   HeadingItem(this.heading);
+
+  Widget buildTitle(BuildContext context) {
+    return Text(
+      heading,
+      style: Theme.of(context).textTheme.headline,
+    );
+  }
+
+  Widget buildSubtitle(BuildContext context) => null;
 }
 
-// A ListItem that contains data to display a message.
+/// A ListItem that contains data to display a message.
 class MessageItem implements ListItem {
   final String sender;
   final String body;
 
   MessageItem(this.sender, this.body);
+
+  Widget buildTitle(BuildContext context) => Text(sender);
+
+  Widget buildSubtitle(BuildContext context) => Text(body);
 }
 ```
 
-![Mixed list demo](/images/cookbook/mixed-list.png){:.site-mobile-screenshot}
- 
+<noscript>
+  <img src="/images/cookbook/mixed-list.png" alt="Mixed list demo" class="site-mobile-screenshot" />
+</noscript>
+
 
 [`ListView.builder()`]: {{site.api}}/flutter/widgets/ListView/ListView.builder.html

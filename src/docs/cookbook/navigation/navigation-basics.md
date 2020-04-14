@@ -1,7 +1,8 @@
 ---
 title: Navigate to a new screen and back
 title: 导航到一个新页面和返回
-description: How to navigate between routes
+description: How to navigate between routes.
+description: 如何在路由之间进行导航。
 prev:
   title: Animate a widget across screens
   title: 跨页面切换的动效 Widget (Hero animations)
@@ -10,6 +11,9 @@ next:
   title: Navigate with named routes
   title: 导航到对应名称的 routes 里
   path: /docs/cookbook/navigation/named-routes
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 Most apps contain several screens for displaying different types of
@@ -41,7 +45,7 @@ In Flutter, a route is just a widget.
 Navigate to a new route using the [`Navigator`][].
 This recipe uses the following steps:
 
-怎么样从一个“路由”跳转到新的“路由“呢？你需要使用 [`Navigator`]({{site.api}}/flutter/widgets/Navigator-class.html) 类。
+怎么样从一个“路由”跳转到新的“路由“呢？[`Navigator`][] 类。
 
 ## Directions
 
@@ -131,14 +135,18 @@ You can create your own, or use a [`MaterialPageRoute`][],
 which is useful because it transitions to the
 new route using a platform-specific animation.
 
-使用 [`Navigator.push()`]({{site.api}}/flutter/widgets/Navigator/push.html)方法跳转到新的路由。`push()` 方法会添加一个 `Route` 对象到导航器的堆栈上。 那么这个 `Route` 对象是从哪里来的呢？
-你可以自己实现一个，或者直接使用 [`MaterialPageRoute`]({{site.api}}/flutter/material/MaterialPageRoute-class.html) 类。
-使用 `MaterialPageRoute` 是非常方便的，框架已经为我们实现了和平台原生类似的切换动画。 
+使用 [`Navigator.push()`] 方法跳转到新的路由，
+`push()` 方法会添加一个 `Route` 对象到导航器的堆栈上。
+那么这个 `Route` 对象是从哪里来的呢？
+你可以自己实现一个，或者直接使用 [`MaterialPageRoute`][] 类。
+使用 `MaterialPageRoute` 是非常方便的，
+框架已经为我们实现了和平台原生类似的切换动画。 
 
 In the `build()` method of the `FirstRoute` widget,
 update the `onPressed()` callback:
 
-在 `FirstRoute` widget 的 `build()` 方法中，我们来修改  `onPressed()` 回调函数：
+在 `FirstRoute` widget 的 `build()` 方法中，
+我们来修改  `onPressed()` 回调函数：
 
 <!-- skip -->
 ```dart
@@ -160,14 +168,15 @@ By using the [`Navigator.pop()`][] method.
 The `pop()` method removes the current `Route` from the stack of
 routes managed by the `Navigator`.
 
-怎么关闭第二个路由回退到第一个呢? 使用
-[`Navigator.pop()`]({{site.api}}/flutter/widgets/Navigator/pop.html)
-方法，`pop()` 方法会从导航器堆栈上移除 `Route` 对象。
+怎么关闭第二个路由回退到第一个呢? 
+使用 [`Navigator.pop()`][] 方法，
+`pop()` 方法会从导航器堆栈上移除 `Route` 对象。
 
 To implement a return to the original route, update the `onPressed()`
 callback in the `SecondRoute` widget:
 
-我们来修改 `SecondRoute` widget 的 `onPressed()` 回调函数，实现返回第一个路由的功能：
+我们来修改 `SecondRoute` widget 的 `onPressed()` 回调函数，
+实现返回第一个路由的功能：
 
 <!-- skip -->
 ```dart
@@ -177,11 +186,11 @@ onPressed: () {
 }
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() {
@@ -233,11 +242,9 @@ class SecondRoute extends StatelessWidget {
 }
 ```
 
-{% comment %}
-We need a new GIF that shows "Route" instead of "Screen".
-{% endcomment %}
-
-![Navigation Basics Demo](/images/cookbook/navigation-basics.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/navigation-basics.gif" alt="Navigation Basics Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`MaterialPageRoute`]: {{site.api}}/flutter/material/MaterialPageRoute-class.html

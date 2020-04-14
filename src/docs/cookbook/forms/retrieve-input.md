@@ -1,6 +1,8 @@
 ---
 title: Retrieve the value of a text field
 title: 获取文本框的输入值
+description: How to retrieve text from a text field.
+description: 如何获取文本框输入的文字
 prev:
   title: Handle changes to a text field
   title: 响应文本框内容的更改
@@ -9,6 +11,9 @@ next:
   title: Focus and text fields
   title: Text Field 上的焦点
   path: /docs/cookbook/forms/focus
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In this recipe,
@@ -148,11 +153,11 @@ FloatingActionButton(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -222,7 +227,10 @@ class _MyCustomFormState extends State<MyCustomForm> {
 }
 ```
 
-![Retrieve Text Input Demo/ 获取文本输入示例](/images/cookbook/retrieve-input.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/retrieve-input.gif" alt="Retrieve Text Input Demo（获取文本输入示例）" class="site-mobile-screenshot" />
+</noscript>
+
 
 [`text()`]: {{site.api}}/flutter/widgets/TextEditingController/text.html
 [`TextEditingController`]: {{site.api}}/flutter/widgets/TextEditingController-class.html

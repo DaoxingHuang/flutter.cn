@@ -4,9 +4,7 @@
 
 import 'dart:math';
 
-import 'package:flutter_web/material.dart';
-import 'package:flutter_web_test/flutter_web_test.dart';
-import 'package:flutter_web_ui/ui.dart' as ui;
+import 'package:flutter/material.dart';
 
 double randomBorderRadius() {
   return Random().nextDouble() * 64;
@@ -21,9 +19,9 @@ Color randomColor() {
 }
 
 class AnimatedContainerDemo extends StatelessWidget {
-  Color color = randomColor();
-  double borderRadius = randomBorderRadius();
-  double margin = randomMargin();
+  final Color color = randomColor();
+  final double borderRadius = randomBorderRadius();
+  final double margin = randomMargin();
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +65,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-Future<void> main() async {
-  await ui.webOnlyInitializePlatform();
+void main() {
   runApp(
     MyApp(),
   );

@@ -1,8 +1,9 @@
 ---
 title: Chrome OS install
 title: 在 Chrome OS 上安装和配置 Flutter 开发环境
+description: How to install on Chrome OS.
+description: 如何在 Chrome OS 上安装 Flutter。
 short-title: Chrome OS
-# js: [{defer: true, url: /assets/archive.js}]
 next:
   title: Set up an editor
   titie: 编辑工具设定
@@ -192,6 +193,6 @@ this functionality work with your Chrome OS
 targeted Flutter app.
 
 
-[how to enable developer mode on your Chromebook]: https://www.androidcentral.com/how-enable-developer-mode-chrome-os
+[how to enable developer mode on your Chromebook]: https://chromium.googlesource.com/chromiumos/docs/+/master/developer_mode.md
 
 目前该功能仍然处于开发阶段，不过你可以在未来返回来根据本文档的内容在 Chrome OS 上开发 Flutter 应用程序。

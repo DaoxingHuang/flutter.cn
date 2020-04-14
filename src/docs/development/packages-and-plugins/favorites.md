@@ -39,7 +39,8 @@ across its ecosystem.
 One of the their jobs is to decide when a package
 has met the quality bar to become a Flutter Favorite.
 
-The current committee members (in alphhabetical order)
+The current committee members
+(ordered alphabetically by last name)
 are as follows:
 
 * Pooja Bhaumik
@@ -59,7 +60,7 @@ send the [committee chair][] an email.
 
 ## Flutter Favorite usage guidelines
 
-Flutter Favorite packages will be labeled as such on pub.dev
+Flutter Favorite packages are labeled as such on pub.dev
 by the Flutter team.
 If you own a package that has been designated as a Flutter Favorite,
 you must adhere to the following guidelines:

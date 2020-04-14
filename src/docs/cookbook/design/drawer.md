@@ -1,6 +1,8 @@
 ---
 title: Add a Drawer to a screen
 title: 在屏幕上添加一个 Drawer
+description: How to implement a Material Drawer.
+description: 如何实现一个 Material 风格的 Drawer。
 prev:
   title: Fade a widget in and out
   title: Widget 的淡入淡出效果
@@ -9,6 +11,9 @@ next:
   title: Displaying SnackBars
   title: 显示 SnackBars
   path: /docs/cookbook/design/snackbars
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 In apps that use Material Design,
@@ -161,7 +166,7 @@ After a user taps an item, you might want to close the drawer.
 You can do this by using the [`Navigator`][].
 
 我们经常需要在用户点击某个项目后就将 Drawer 关掉。
-那么怎样才能做到这一点呢？请试试看 [Navigator]({{site.api}}/flutter/widgets/Navigator-class.html)。
+那么怎样才能做到这一点呢？请试试看 [`Navigator`][]。
 
 When a user opens the drawer, Flutter adds the drawer to the navigation
 stack. Therefore, to close the drawer, call `Navigator.pop(context)`.
@@ -182,11 +187,11 @@ ListTile(
 ),
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -253,7 +258,9 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Drawer Demo](/images/cookbook/drawer.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/drawer.png" alt="Drawer Demo（抽屉样例）" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`Drawer`]: {{site.api}}/flutter/material/Drawer-class.html

@@ -1,6 +1,8 @@
 ---
 title: An introduction to unit testing
 title: 单元测试介绍
+description: How to write unit tests.
+description: 如何编写单元测试。
 short-title: Introduction
 prev:
   title: Perform scrolling
@@ -93,12 +95,15 @@ The `counter.dart` file contains a class that you want to test and
 resides in the `lib` folder. The `counter_test.dart` file contains
 the tests themselves and lives inside the `test` folder.
 
-`counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类,而位于 `test` 文件夹的`counter_test.dart` 文件将包含测试本身，。
+`counter.dart` 文件包含一个位于 `lib` 文件夹的待测试类，
+而位于 `test` 文件夹的`counter_test.dart` 文件将包含测试本身。
 
 In general, test files should reside inside a `test` folder located at the root
-of your Flutter application or package.
+of your Flutter application or package. Test files should always end with `_test.dart`, 
+this is the convention used by the test runner when searching for tests.
 
 通常测试文件应位于放置在 Flutter 应用或包的根目录下的 `test` 文件夹。
+测试文件通常以 `_test.dart` 命名，这是 test runner 寻找测试文件的惯例。
 
 When you're finished, the folder structure should look like this:
 

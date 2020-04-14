@@ -1,6 +1,8 @@
 ---
 title: Animate a widget across screens
 title: 跨页面切换的动效 Widget (Hero animations)
+description: How to animate a widget from one screen to another
+description: 如何让一个 widget 跨页面进行动画。
 prev:
   title: Report errors to a service
   title: 把报错信息通过服务上传
@@ -9,6 +11,9 @@ next:
   title: Navigate to a new screen and back
   title: 导航到一个新页面和返回
   path: /docs/cookbook/navigation/navigation-basics
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 It's often helpful to guide users through an app as they navigate from screen
@@ -16,14 +21,17 @@ to screen. A common technique to lead users through an app is to animate a
 widget from one screen to the next. This creates a visual anchor connecting
 the two screens.
 
-在页面跳转过程中给用户加以引导是非常有用的。实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，从而在两个页面间建立视觉上的锚定关联。
+在页面跳转过程中给用户加以引导是非常有用的。
+实现引导的一种通用做法是在页面切换时为某个组件加上转场动画，
+从而在两个页面间建立视觉上的锚定关联。
 
 Use the [`Hero`][] widget
 to animate a widget from one screen to the next.
 
-在 Flutter 中，可以通过 [`Hero`]({{site.api}}/flutter/widgets/Hero-class.html) 组件实现页面切换时组件的转场动画。
+在 Flutter 中，可以通过 [`Hero`][] widget 实现页面切换时组件的转场动画。
 
 This recipe uses the following steps:
+
 这个教程将包含以下步骤：
 
   1. Create two screens showing the same image.
@@ -47,7 +55,9 @@ Animate the image from the first screen to the second screen when
 the user taps the image. For now, create the visual structure;
 handle animations in the next steps.
 
-在这个示例中，将在两个页面中展示相同的图片。当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
+在这个示例中，将在两个页面中展示相同的图片。
+当用户在第一个页面点击图片，会通过一个转场动画切换到第二个页面。
+现在，我们将会创建页面的视觉结构，并在后续步骤中处理动画。
 
 {{site.alert.note}}
 
@@ -55,7 +65,8 @@ handle animations in the next steps.
   [Navigate to a new screen and back][]
   and [Handle taps][] recipes.
   
-  这个示例建立在 [导航到一个新页面和返回](/docs/cookbook/navigation/navigation-basics) 和 [处理点击事件](/docs/cookbook/gestures/handling-taps) 这两个章节的基础上。
+  这个示例建立在 [导航到一个新页面和返回][Navigate to a new screen and back] 和 
+  [处理点击事件][Handle taps] 这两个章节的基础上。
   
 {{site.alert.end}}
 
@@ -109,7 +120,9 @@ To connect the two screens together with an animation, wrap
 the `Image` widget on both screens in a `Hero` widget.
 The `Hero` widget requires two arguments:
 
-为了通过动画在两个页面间建立联系，需要把每个页面的 `Image` 组件都包裹进 `Hero` 组件里面。`Hero` 组件有两个参数：
+为了通过动画在两个页面间建立联系，
+需要把每个页面的 `Image` 组件都包裹进 `Hero` 组件里面。
+`Hero` 组件有两个参数：
 
 <dl>
   <dt>`tag`</dt>
@@ -140,7 +153,9 @@ To complete the connection with the first screen,
 wrap the `Image` on the second screen with a `Hero`
 widget that has the same `tag` as the `Hero` in the first screen.
 
-为了完善与第一个页面的关联，同样需要把第二个页面中的 `Image` 组件包裹进 `Hero` 组件里面。它的 `tag` 也必须和第一个页面相同。
+为了完善与第一个页面的关联，
+同样需要把第二个页面中的 `Image` 组件包裹进 `Hero` 组件里面。
+它的 `tag` 也必须和第一个页面相同。
 
 After applying the `Hero` widget to the second screen,
 the animation between screens just works.
@@ -170,11 +185,11 @@ Hero(
   
 {{site.alert.end}}
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/material.dart';
 
 void main() => runApp(HeroApp());
@@ -235,7 +250,9 @@ class DetailScreen extends StatelessWidget {
 }
 ```
 
-![Hero demo](/images/cookbook/hero.gif){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/hero.gif" alt="Hero demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [Handle taps]: /docs/cookbook/gestures/handling-taps

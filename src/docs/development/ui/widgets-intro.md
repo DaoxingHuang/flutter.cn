@@ -1,6 +1,8 @@
 ---
 title: Introduction to widgets
 title: Widgets 介绍
+description: Learn about Flutter's widgets.
+description: 了解 Flutter widget 相关的内容。
 ---
 
 {% assign api = site.api | append: '/flutter' -%}
@@ -670,9 +672,8 @@ class Product {
 typedef void CartChangedCallback(Product product, bool inCart);
 
 class ShoppingListItem extends StatelessWidget {
-  ShoppingListItem({Product product, this.inCart, this.onCartChanged})
-      : product = product,
-        super(key: ObjectKey(product));
+  ShoppingListItem({this.product, this.inCart, this.onCartChanged})
+      : super(key: ObjectKey(product));
 
   final Product product;
   final bool inCart;

@@ -34,9 +34,9 @@
 - title: 教程和样例代码
   children:
     - title: Flutter Gallery [新增]
-      permalink: https://flutter.github.io/samples/#/
+      permalink: https://flutter.github.io/gallery/
     - title: GitHub 上样例应用
-      permalink: https://github.com/flutter/samples/blob/master/INDEX.md
+      permalink: https://flutter.github.io/samples/
     - title: 实用教程 (Cookbook)
       permalink: /docs/cookbook
     - title: Codelabs
@@ -60,11 +60,16 @@
               match-page-url-exactly: true
             - title: 布局构建教程
               permalink: /docs/development/ui/layout/tutorial
-            - title: Creating responsive apps
+            - title: 创建响应式应用
               permalink: /docs/development/ui/layout/responsive
             - title: 边界约束 (Box constraints)
               permalink: /docs/development/ui/layout/box-constraints
-        - title: 交互添加
+        - title: 闪屏页
+          permalink: /docs/development/ui/splash-screen
+          children:
+            - title: Android 闪屏页
+              permalink: /docs/development/ui/splash-screen/android-splash-screen
+        - title: 添加互动
           permalink: /docs/development/ui/interactive
         - title: 资源和图片
           permalink: /docs/development/ui/assets-and-images
@@ -89,12 +94,14 @@
         - title: 用户界面 (UI) 进阶
           permalink: /docs/development/ui/advanced
           children:
-            - title: Focus handling system # Where did this go?
+            - title: 焦点处理系统 # Where did this go?
             - title: 滑动效果 (Slivers)
               permalink: /docs/development/ui/advanced/slivers
             - title: 手势
               permalink: /docs/development/ui/advanced/gestures
-        - title: Platform-specific theming
+            - title: 闪屏页
+              permalink: /docs/development/ui/advanced/splash-screen
+        - title: 平台特定主题
         - title: 核心 Widget 目录
           permalink: /docs/development/ui/widgets
     - title: 数据调用和后端
@@ -113,6 +120,8 @@
               permalink: /docs/development/data-and-backend/state-mgmt/simple
             - title: 状态管理参考
               permalink: /docs/development/data-and-backend/state-mgmt/options
+        - title: 网络与 http
+          permalink: /docs/development/data-and-backend/networking
         - title: JSON 和序列化数据
           permalink: /docs/development/data-and-backend/json
         - title: 后端服务
@@ -164,8 +173,6 @@
             permalink: /docs/development/add-to-app/android/add-flutter-screen
           - title: 添加一个 Flutter Fragment
             permalink: /docs/development/add-to-app/android/add-flutter-fragment
-          - title: 添加一个闪屏页
-            permalink: /docs/development/add-to-app/android/add-splash-screen
       - title: 将 Flutter 添加到现有 iOS 应用
         permalink: /docs/development/add-to-app/ios
         children:
@@ -173,14 +180,14 @@
             permalink: /docs/development/add-to-app/ios/project-setup
           - title: 添加单个 Flutter 页面
             permalink: /docs/development/add-to-app/ios/add-flutter-screen
-      - title: 运行，调试以及热重载
+      - title: 调试及热重载
         permalink: /docs/development/add-to-app/debugging
       - title: 加载顺序和性能
         permalink: /docs/development/add-to-app/performance
     - title: 开发工具和技术细节
       permalink: /docs/development/tools
       children:
-        - title: Android Studio 或类 IntelliJ 系列
+        - title: Android Studio 或 IntelliJ 系列
           permalink: /docs/development/tools/android-studio
         - title: Visual Studio Code
           permalink: /docs/development/tools/vs-code
@@ -213,7 +220,7 @@
             - title: 版本升级
               permalink: /docs/development/tools/sdk/upgrading
             - title: 版本列表
-              permalink: /docs/development/tools/sdk/archive
+              permalink: /docs/development/tools/sdk/releases
             - title: 重要改动 (Breaking changes)
               permalink: /docs/release/breaking-changes
             - title: 版本说明
@@ -231,15 +238,22 @@
           permalink: /docs/development/tools/hot-reload
         - title: 代码格式化
           permalink: /docs/development/tools/formatting
-    - title: 迁移到 AndroidX
+    - title: 迁移说明
       permalink: /docs/development/androidx-migration
+      children:
+        - title: 迁移到 AndroidX
+          permalink: /docs/development/androidx-migration
+        - title: 升级 Android plugin
+          permalink: /docs/development/packages-and-plugins/plugin-api-migration
+        - title: Xcode 11.4 支持
+          permalink: /docs/development/ios-project-migration
 
 - title: 测试和调试
   permalink: /docs/testing
   children:
     - title: 调试工具
       permalink: /docs/testing/debugging
-    - title: Debugging apps programmatically
+    - title: 以编程方式调试应用
       permalink: /docs/testing/code-debugging
     - title: 使用原生的调试器
       permalink: /docs/testing/oem-debuggers
@@ -252,7 +266,8 @@
       match-page-url-exactly: true
 
 - title: 性能优化
-  permalink: /docs/perf
+#  permalink: /docs/perf
+  expanded: true
   children:
     - title: 概览
       permalink: /docs/perf
@@ -265,18 +280,19 @@
     - title: 渲染性能
       permalink: /docs/perf/rendering
       children:
-      - title: 概览
-        permalink: /docs/perf/rendering
-        match-page-url-exactly: true
-      - title: 性能最佳实践
-        permalink: /docs/perf/rendering/best-practices
-      - title: 性能分析
-        permalink: /docs/perf/rendering/ui-performance
+        - title: 概览
+          permalink: /docs/perf/rendering
+        - title: 性能最佳实践
+          permalink: /docs/perf/rendering/best-practices
+        - title: 性能分析
+          permalink: /docs/perf/rendering/ui-performance
 
 - title: 打包部署
   children:
+    - title: 混淆 Dart 代码
+      permalink: /docs/deployment/obfuscate
     - title: 配置 flavors 构建双端
-      permalink:  /docs/deployment/flavors
+      permalink: /docs/deployment/flavors
     - title: 打包和发布为 Android 应用
       permalink: /docs/deployment/android
     - title: 打包和发布为 iOS 应用
@@ -295,20 +311,21 @@
     - title: Flutter 工作原理
       permalink: /docs/resources/inside-flutter
     - title: Google 文字库
-      permalink: https://pub.dev/packages/google_fonts
+      permalink: https://pub.flutter-io.cn/packages/google_fonts
     - title: 平台行为差异和适配
       permalink: /docs/resources/platform-adaptations
     - title: 技术概览
       permalink: /docs/resources/technical-overview
-    # - title: Flutter best practices # TODO
     - title: Flutter 技术视频资源
       permalink: /docs/resources/videos
-    - title: Books
+    - title: 书籍
       permalink: /docs/resources/books
     # - title: Flutter developer communities # TODO
     # - title: Flutter learning resources # TODO
     - title: 常见问题解答
       permalink: /docs/resources/faq
+    - title: 规划文档
+      permalink: /docs/resources/design-docs
 
 - title: 参考资料
   expanded: true
@@ -316,6 +333,6 @@
     - title: Flutter Widget 目录
       permalink: /docs/reference/widgets
     - title: Flutter API 文档
-      permalink: https://api.flutter.cn
+      permalink: https://api.flutter-io.cn
     - title: Package 网站
       permalink: https://pub.flutter-io.cn/flutter

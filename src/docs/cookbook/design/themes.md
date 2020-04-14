@@ -17,6 +17,9 @@ next:
   title: Work with tabs
   title: 使用 tabs
   path: /docs/cookbook/design/tabs
+js:
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
 ---
 
 To share colors and font styles throughout an app, use themes.
@@ -38,7 +41,8 @@ Material widgets also use your Theme to set the background
 colors and font styles for AppBars, Buttons, Checkboxes, and more.
 
 在定义一个 `Theme` 之后，我们可以让它在指定的 widgets
-（包括 Flutter 自带的 Material widgets，例如 AppBars、Buttons、Checkboxes 等等）中生效。
+（包括 Flutter 自带的 Material widgets，
+例如 AppBars、Buttons、Checkboxes 等等）中生效。
 
 ## Creating an app theme
 
@@ -48,8 +52,7 @@ To share a Theme across an entire app, provide a
 [`ThemeData`][] to the `MaterialApp` constructor.
 
 全局 Theme 会影响整个 app 的颜色和字体样式。
-只需要向 `MaterialApp` 构造器传入
-[`ThemeData`]({{site.api}}/flutter/material/ThemeData-class.html) 即可。
+只需要向 `MaterialApp` 构造器传入 [`ThemeData`][] 即可。
 
 If no `theme` is provided, Flutter creates a default theme for you.
 
@@ -66,7 +69,7 @@ MaterialApp(
     accentColor: Colors.cyan[600],
 
     // Define the default font family.
-    fontFamily: 'Montserrat',
+    fontFamily: 'Georgia',
 
     // Define the default TextTheme. Use this to specify the default
     // text styling for headlines, titles, bodies of text, and more.
@@ -130,7 +133,8 @@ Theme(
 Rather than overriding everything, it often makes sense to extend the parent
 theme. You can handle this by using the [`copyWith()`][] method.
 
-相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 [`copyWith`]({{site.api}}/flutter/material/ThemeData/copyWith.html) 方法即可。
+相比从头开始定义一套样式，从父级 Theme 扩展可能更常规一些，使用 
+[`copyWith()`][] 方法即可。
 
 <!-- skip -->
 ```dart
@@ -181,11 +185,11 @@ Container(
 );
 ```
 
-## Complete example
+## Interactive example
 
-## 完整样例
+## 交互式样例
 
-```dart
+```run-dartpad:theme-light:mode-flutter:run-true:width-100%:height-600px:split-60:ga_id-interactive_example
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -207,7 +211,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.cyan[600],
 
         // Define the default font family.
-        fontFamily: 'Montserrat',
+        fontFamily: 'Georgia',
 
         // Define the default TextTheme. Use this to specify the default
         // text styling for headlines, titles, bodies of text, and more.
@@ -259,7 +263,9 @@ class MyHomePage extends StatelessWidget {
 }
 ```
 
-![Themes Demo](/images/cookbook/themes.png){:.site-mobile-screenshot}
+<noscript>
+  <img src="/images/cookbook/themes.png" alt="Themes Demo" class="site-mobile-screenshot" />
+</noscript>
 
 
 [`copyWith()`]: {{site.api}}/flutter/material/ThemeData/copyWith.html

@@ -166,13 +166,13 @@ Flutter 1.0 was launched on Dec 4th, 2018. Thousands of apps
 have shipped with Flutter to hundreds of millions of devices.
 See some sample apps in the [showcase][].
 
-Flutter 1.0 已于 2018 年 12 月推出。成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
+Flutter 1.0 已于 2018 年 12 月推出。成千上万使用了 Flutter 的应用已经被安装到了数亿台设备中。
+请通过成功 [案例页面][showcase] 了解知名开发者们的成果。
 
 For more information on the launch and subsequent releases,
 see [Flutter 1.0: Google's Portable UI Toolkit][].
 
-更多有关启动和后续版本的信息，你可以查看 [Flutter 1.0: Google's Portable UI
-Toolkit](https://developers.googleblog.com/2018/12/flutter-10-googles-portable-ui-toolkit.html)。
+更多有关启动和后续版本的信息，你可以查看 [Flutter 1.0: Google's Portable UI Toolkit][]。
 
 ## What does Flutter provide?
 
@@ -219,19 +219,23 @@ We support plugins for [Android Studio][],
 [IntelliJ IDEA][], and [VS Code][].
 
 可以通过插件的方式使用
-[Android Studio][]、[IntelliJ IDEA][] 和 [VS Code][] 开发 Flutter 应用。
+[Android Studio][]、[IntelliJ IDEA][] 和 [VS Code][]
+开发 Flutter 应用。
 
 See [editor configuration][] for setup details,
 and [Android Studio/IntelliJ][] and [VS Code][]
 for tips on how to use the plugins.
 
-有关设置的详细信息，请参阅 [编辑器配置文档][editor configuration]，以及使用 [Android Studio/IntelliJ][] 和 [VS Code][] 插件的小提示。
+有关设置的详细信息，请参阅 
+[编辑器配置文档][editor configuration]，
+以及使用 [Android Studio/IntelliJ][] 和 [VS Code][] 插件的小提示。
 
 Alternatively, you can use a combination of the
 `flutter` command in a terminal and one of the
 many editors that support [editing Dart][].
 
-您也可以在命令行中使用 `flutter` 命令，并配合能编辑 [Dart 语言的编辑器]({{site.dart-site}}/tools) 进行开发。
+您也可以在命令行中使用 `flutter` 命令，
+并配合能编辑 [Dart 语言的编辑器]({{site.dart-site}}/tools) 进行开发。
 
 ### Does Flutter come with a framework?
 
@@ -243,7 +247,9 @@ to be layered and customizable (and optional).
 Developers can choose to use only parts of the
 framework, or a different framework.
 
-是的，Flutter 自带了现代化的开发框架，灵感正是来自 React。Flutter 的框架旨在实现分层、可定制 (以及灵活的开发选项)。开发者可以选择仅使用框架的一部分，或是使用另外的框架。
+是的，Flutter 自带了现代化的开发框架，灵感正是来自 React。
+Flutter 的框架旨在实现分层、可定制 (以及灵活的开发选项)。
+开发者可以选择仅使用框架的一部分，或是使用另外的框架。
 
 ### Does Flutter come with widgets?
 
@@ -380,7 +386,6 @@ of Flutter apps would be limited by the quality of those widgets.
 我们希望最终能够产生出更高质量的应用。如果我们直接使用 OEM 自带的 widget，那么 Flutter 应用的质量和性能将受到这些 widget 质量的限制。
 
 In Android, for example, there's a hard-coded set of gestures and fixed
-
 own gesture recognizer that is a first-class participant in the
 [gesture system][]. Moreover, two widgets authored by different
 people can coordinate to disambiguate gestures.
@@ -503,7 +508,7 @@ Dart scores highly for us on the following primary criteria:
   we need to stay productive at 100k's lines of code, without sacrificing
   approachability or readability of the framework and widgets for our developers.
   
-  _开发人员生产力_。Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
+  **开发人员生产力**：Flutter 的主要价值之一是通过让开发人员用同一套代码创建适用于 iOS 和 Android 的应用而节省开发资源。使用高生产力的语言加速开发，并提升 Flutter 的吸引力。
   这对于我们的框架团队和开发人员都很重要。
   Flutter 本身的大部分内容所用的语言都和我们提供给用户的一样，所以我们要让十万行代码保持生产力，而不会牺牲框架和部件对我们开发人员的可达性和可读性。
 
@@ -515,7 +520,7 @@ Dart scores highly for us on the following primary criteria:
   Plus, the vast majority of developers have experience with object-oriented
   development, making it easier to learn how to develop with Flutter.
 
-  _面向对象_。对于 Flutter 而言，我们需要一种适合其问题域——创建可视化用户体验——的语言。这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。虽然我们可以使用非面向对象语言，但这意味着，为了解决几个难题，我们要 "重新发明轮子"。此外，绝大多数开发者都拥有面向对象开发的经验，因此可以更轻松地学习如何使用 Flutter 进行开发。
+  **面向对象**：对于 Flutter 而言，我们需要一种适合其问题域——创建可视化用户体验——的语言。这个领域中沉淀了数十年的面向对象构建 UI 框架的经验。虽然我们可以使用非面向对象语言，但这意味着，为了解决几个难题，我们要 "重新发明轮子"。此外，绝大多数开发者都拥有面向对象开发的经验，因此可以更轻松地学习如何使用 Flutter 进行开发。
 
 * _Predictable, high performance_. With Flutter, we want to empower developers
   to create fast, fluid user experiences. In order to achieve that, we need to
@@ -524,7 +529,7 @@ Dart scores highly for us on the following primary criteria:
   performance and delivers predictable performance, without periodic
   pauses that would cause dropped frames.
 
-  _稳定可期的高性能表现_。我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。这意味着我们需要的语言一方面既要拥有高性能，另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
+  **稳定可期的高性能表现**：我们希望开发者能够通过 Flutter 创建快速而流畅的用户体验。为了实现这一点，我们需要能够在每个动画帧期间运行大量的最终开发者代码。这意味着我们需要的语言一方面既要拥有高性能，另一方面又需要避免因周期性的中断而影响帧率，即 "可期性"。
 
 * _Fast allocation_. The Flutter framework uses a functional-style
   flow that depends heavily on the underlying memory
@@ -532,7 +537,7 @@ Dart scores highly for us on the following primary criteria:
   This style was developed in languages with this property and does
   not work efficiently in languages that lack this facility.
 
-  _快速内存分配_。Flutter 框架使用的函数式流程，很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。这个流程是使用支持这种分配机制的语言进行开发的，在缺少这个机制的语言中无法有效运作。
+  **快速内存分配**：Flutter 框架使用的函数式流程，很大程度上依赖于下层的内存分配器高效地对小型的、短生命周期的内容进行内存分配。这个流程是使用支持这种分配机制的语言进行开发的，在缺少这个机制的语言中无法有效运作。
 
 
 ### Can Flutter run any Dart code?
@@ -583,7 +588,7 @@ the LICENSE file is 54.3 KB (compressed), necessary Java code
 These numbers were measured using [apkanalyzer][],
 which is also [built into Android Studio][].
 
-这些数字是由 [AndroidStudio][] 内置的 [apkanalyzer][] 实测得出。
+这些数字是由 [AndroidStudio][built into Android Studio] 内置的 [apkanalyzer][] 实测得出。
 
 On iOS, a release IPA of the same app has a download size of
 10.9 MB on an iPhone X, as reported by Apple’s App Store Connect.
@@ -609,7 +614,7 @@ These steps happen after archiving your app and shipping it to the store.
 
 从 Flutter SDK 1.12 开始，release 模式下引擎二进制产物将包含 LLVM 的中间语言表示（bitcode）。
 Xcode 将使用 bitcode 为 App Store 生成最终包含了最新的编译器优化和功能的二进制文件。
-Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 _bitcode marker_，因此更能代表引擎的真实大小。
+Profile 和 Debug 模式下的 Framework 中，bitcode 部分仅包含 **bitcode marker**，因此更能代表引擎的真实大小。
 无论你是否使用 bitcode，release 模式下增加的包大小都会在应用归档后并发布到应用商店后，在构建的最终步骤里被移除。
 
 Of course, we recommend that you measure your own app.
@@ -647,7 +652,9 @@ designed to help developers easily achieve a constant 60fps.
 Flutter apps run via natively compiled code&mdash;no
 interpreters are involved. This means Flutter apps start quickly.
 
-Flutter 应用会有很出色的性能。Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。这也意味着 Flutter 应用启动会非常快捷。
+Flutter 应用会有很出色的性能。Flutter 设计的目标就是帮助开发者轻松实现 60fps 的稳定帧率。
+Flutter 应用通过本地编译的代码运行&mdash;不涉及解释过程。
+这也意味着 Flutter 应用启动会非常快捷。
 
 ### What kind of developer cycles can I expect? How long between edit and refresh? {#hot-reload}
 
@@ -663,11 +670,13 @@ is retained after a reload. This means you can quickly iterate
 on a screen deeply nested in your app, without starting
 from the home screen after every reload.
 
-另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，而无需从应用首页开始重新操作。
+另外，Flutter 的热重载是有状态的 (stateful)，这意味着重新加载后 app 的状态会被保留。
+这样即使您修改的界面在应用很深的位置，重载后您也能直接看到修改后的该界面，
+而无需从应用首页开始重新操作。
 
 ### How is _hot reload_ different from _hot restart_?
 
-### 热重载 _hot reload_ 相比较热重启 _hot restart_ 的区别在哪里？
+### 热重载 **hot reload** 相比较热重启 **hot restart** 的区别在哪里？
 
 Hot reload works by injecting updated source code files
 into the running Dart VM (Virtual Machine). This includes
@@ -675,7 +684,9 @@ not only adding new classes, but also adding methods and
 fields to existing classes, and changing existing functions.
 A few types of code changes cannot be hot reloaded though:
 
-热重载是通过将更改过的源代码文件注入到正在运行的 Dart VM 中来实现的。这不仅包括添加新的类，还包括在既存的类里添加方法和字段，以及修改既有的方法。不过有少数代码修改是无法被热重载的：
+热重载是通过将更改过的源代码文件注入到正在运行的 Dart VM 中来实现的。
+这不仅包括添加新的类，还包括在既存的类里添加方法和字段，
+以及修改既有的方法。不过有少数代码修改是无法被热重载的：
 
 * Global variable initializers.
 
@@ -759,7 +770,9 @@ We believe Flutter works well on tablets. We do not currently implement
 all of the tablet-specific adaptations recommended by Material Design,
 though we are planning further investment in this area.
 
-我们认为，Flutter 会在平板电脑上运行良好。我们目前没有覆盖到全部的 Material Design 平板电脑适配规则，但我们正计划在这个领域进一步加大投入。
+我们认为，Flutter 会在平板电脑上运行良好，
+我们目前没有覆盖到全部的 Material Design 平板电脑适配规则，
+但我们正计划在这个领域进一步加大投入。
 
 ### Does Flutter run on the web?
 
@@ -771,7 +784,9 @@ work on the web preview, but there are some caveats
 while we’re still in preview. Check out the
 [web instructions][] for more details.
 
-Flutter web 目前处于 [技术预览状态][technical preview]。你可以打包现有 Flutter 代码运行在预览版 web 上，但由于我们仍旧是预览版，所以会有一些警告。你可以在 [web instructions][] 查看更多详细信息。
+Flutter web 目前处于 [技术预览状态][technical preview]。
+你可以打包现有 Flutter 代码运行在预览版 web 上，但由于我们仍旧是预览版，
+所以会有一些警告。你可以在 [web instructions][] 查看更多详细信息。
 
 ### Can I use Flutter to build desktop apps?
 
@@ -781,7 +796,8 @@ Yes, but right now it's not very well supported.
 We're working on making this a first class experience.
 The current progress is documented [on the Flutter wiki][].
 
-可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验。这方面的进展在 [我们的 wiki][on the Flutter wiki] 上可以了解到。
+可以，但目前支持得并不完美。我们正在致力于为桌面应用打造最佳体验，
+这方面的进展在 [我们的 wiki][on the Flutter wiki] 上可以了解到。
 
 ### Can I use Flutter inside of my existing native app?
 
@@ -796,7 +812,8 @@ See our integration documentation in the [add-to-app section][] of our website.
 
 请参考 [这个文档][add-to-app section]，查看如何将 Flutter 加入现有的项目。
 
-目前的两个演示项目是 [platform_view][] 和 [flutter_view][]。我们的 wiki 页面中也提供了一些初始文档：[将 Flutter 添加至现有应用][Add Flutter to existing apps]。
+目前的两个演示项目是 [platform_view][] 和 [flutter_view][]，
+我们的 wiki 页面中也提供了一些初始文档：[将 Flutter 添加至现有应用][add-to-app section]。
 
 ### Can I access platform services and APIs like sensors and local storage?
 
@@ -808,13 +825,16 @@ However, we want to avoid the "lowest common denominator" problem
 with most cross-platform APIs, so we do not intend to build
 cross-platform APIs for all native services and APIs.
 
-可以。Flutter 默认即为开发者提供了操作系统中**某些**平台专属服务和 API 的操作入口。但是，我们希望避免大多数跨平台 API 的“最小公约数”问题，因此我们不打算为所有本地服务和 API 构建跨平台的操作 API。
+可以。Flutter 默认即为开发者提供了操作系统中 **一些** 平台专属服务和 API 的操作入口。
+但是，我们希望避免大多数跨平台 API 的“最小公约数”问题，
+因此我们不打算为所有本地服务和 API 构建跨平台的操作 API。
 
 A number of platform services and APIs have
 [ready-made packages][] available on pub.dev.
 Using an existing package [is easy][].
 
-很多平台服务和 API 都在 Pub 站点中提供了 [现成的代码包][ready-made packages]，我们可以根据 [说明][is easy] 使用它们，非常方便。
+很多平台服务和 API 都在 Pub 站点中提供了 [现成的代码包][ready-made packages]，
+我们可以根据 [说明][is easy] 使用它们，非常方便。
 
 Finally, we encourage developers to use Flutter's
 asynchronous message passing system to create your
@@ -899,7 +919,10 @@ This is enabled via a flexible message passing style where a Flutter app
 might send and receive messages to the mobile platform using a
 [`BasicMessageChannel`][].
 
-可以，Flutter 支持调用 (包括集成) Android 上的 Java 或者 Kotlin 代码，或者 iOS 上的 ObjectiveC 或 Swift 代码。这是通过灵活的消息传递方式实现的，Flutter 应用可以使用 [`BasicMessageChannel`][] 向移动平台收发消息。
+可以，Flutter 支持调用 (包括集成) Android 上的 Java 或者 Kotlin 代码，
+或者 iOS 上的 ObjectiveC 或 Swift 代码。
+这是通过灵活的消息传递方式实现的，
+Flutter 应用可以使用 [`BasicMessageChannel`][] 向移动平台收发消息。
 
 Learn more about accessing platform and third-party services
 in Flutter with [platform channels][].
@@ -1110,191 +1133,231 @@ In no particular order:
 
 Flutter 是一个多范式的编程环境。过去几十年中许多编程技术都有在 Flutter 中使用。我们在选择范式时会考虑其适用性进行综合性的决策。以下列出的范式不分先后：
 
-**Composition** 
-: The primary paradigm used by Flutter is that of using
-small objects with narrow scopes of behavior, composed together to
-obtain more complicated effects. Most widgets in the Flutter widget
-library are built in this way. For example, the Material
-[FlatButton][]
-class is built using a
-[MaterialButton][]
-class, which itself is built using
-an [IconTheme][],
-an [InkWell][],
-a [Padding][],
-a [Center][],
-a [Material][],
-an [AnimatedDefaultTextStyle][],
-and a [ConstrainedBox][].
-The [InkWell][]
-is built using a [GestureDetector][].
-The [Material][]
-is built using an [AnimatedDefaultTextStyle][],
-a [NotificationListener][],
-and an [AnimatedPhysicalModel][].
-And so on. It's widgets all the way down.
+**Composition**
+<br> The primary paradigm used by Flutter is that of using
+  small objects with narrow scopes of behavior, composed together to
+  obtain more complicated effects. Most widgets in the Flutter widget
+  library are built in this way. For example, the Material
+  [`FlatButton`][] class is built using a [`MaterialButton`][]
+  class, which itself is built using
+  an [`IconTheme`][], an [`InkWell`][], a [`Padding`][],
+  a [`Center`][], a [`Material`][],
+  an [`AnimatedDefaultTextStyle`][], and a [`ConstrainedBox`][].
+  The [`InkWell`][] is built using a [`GestureDetector`][].
+  The [`Material`][] is built using an [`AnimatedDefaultTextStyle`][],
+  a [`NotificationListener`][], and an [`AnimatedPhysicalModel`][].
+  And so on. It's widgets all the way down.
 
 **组合 (composition)** 
-：这也是 Flutter 的主要开发范式，将简单的，行为有限的小对象进行组合，从而实现更复杂的效果。绝大多数 Flutter widget 都是用这种方法构建的。比如 Material [FlatButton][] 类是基于 [MaterialButton][] 类构建的，而这个类则是由 [IconTheme][]、[InkWell][]、[Padding][]、[Center][]、[Material][]、[AnimatedDefaultTextStyle][] 以及 [ConstrainedBox][] 组合而成的。而 [InkWell][] 则是由 [GestureDetector][] 组成，[Material][] 则是由 [AnimatedDefaultTextStyle][]、[NotificationListener][] 和 [AnimatedPhysicalModel][] 组成。如此等等。
+<br>这也是 Flutter 的主要开发范式，将简单的、行为有限的小对象进行组合，从而实现更复杂的效果。
+绝大多数 Flutter widget 都是用这种方法构建的。
+比如 Material [`FlatButton`][] 类是基于 [`MaterialButton`][] 类构建的，
+而这个类则是由 
+[`IconTheme`][]、[`InkWell`][]、[`Padding`][]、[`Center`][]、[`Material`][]、[`AnimatedDefaultTextStyle`][] 
+以及 [`ConstrainedBox`][] 组合而成的。
+而 [`InkWell`][] 则是由 [`GestureDetector`][] 组成，
+[`Material`][] 则是由 
+[`AnimatedDefaultTextStyle`][]、[`NotificationListener`][] 和 [`AnimatedPhysicalModel`][] 组成。
+如此等等。
 
 
-**Functional programming** 
-: Entire applications can be built with only
-[StatelessWidget][]s,
-which are essentially functions that describe how arguments map to other
-functions, bottoming out in primitives that compute layouts or paint graphics.
-(Such applications can't easily have state, so are typically non-interactive.)
-For example, the [Icon][]
-widget is essentially a function that maps its arguments
-([color][],
-[icon][],
-[size][]) into layout
-primitives. Additionally, heavy use is made of immutable data structures,
-including the entire
-[Widget][] class
-hierarchy as well as numerous supporting classes such as
-[Rect][] and
-[TextStyle][]. On a
-smaller scale, Dart's
-[Iterable][] API,
-which makes heavy use of the functional style (map, reduce, where, etc), is
-frequently used to process lists of values in the framework.
+**Functional programming**
+<br> Entire applications can be built with only
+  [`StatelessWidget`][]s, which are essentially functions that
+  describe how arguments map to other functions, bottoming out
+  in primitives that compute layouts or paint graphics.
+  (Such applications can't easily have state,
+  so are typically non-interactive.) For example, the [`Icon`][]
+  widget is essentially a function that maps its arguments
+  ([`color`][], [`icon`][], [`size`][]) into layout primitives.
+  Additionally, heavy use is made of immutable data structures,
+  including the entire [`Widget`][] class
+  hierarchy as well as numerous supporting classes such as
+  [`Rect`][] and [`TextStyle`][]. On a smaller scale, Dart's
+  [`Iterable`][] API, which makes heavy use of the functional
+  style (map, reduce, where, etc), is frequently used to process
+  lists of values in the framework.
 
 **函数式编程 (functional programming)** 
-：整个应用都可以只用 [StatelessWidget][] 来构建，它本质上就是一些方法，
+<br> 整个应用都可以只用 [`StatelessWidget`][] 来构建，它本质上就是一些方法，
 用来描述如何将参数传送给其他方法，以及在布局区域内计算布局以及绘制图像。
 当然这样的应用一般也不会包含状态，所以通常也无法进行交互。
-比如，[Icon][] widget 就只是一个将其元素 
-([颜色][color]、[图标][icon]、[尺寸][size]) 罗列在布局区域内的方法。
+比如，[`Icon`][] widget 就只是一个将其元素 
+([颜色][`color`]、[图标][`icon`]、[尺寸][`size`]) 罗列在布局区域内的方法。
 另外，当这个范式被重度使用时，则会使用不可变的数据结构，
-如整个 [Widget][] 类及其派生，以及一些辅助类，如 [Rect][] 和 [TextStyle][]。
+如整个 [`Widget`][] 类及其派生，以及一些辅助类，如 [`Rect`][] 和 [`TextStyle`][]。
 另外，从一个较小的尺度来看的话，
-Dart 的 [Iterable][] API 也重度使用了这个范式 (如 map, reduce, where 等方法)，
+Dart 的 [`Iterable`][] API 也重度使用了这个范式 (如 map, reduce, where 等方法)，
 它在框架中经常被用来处理一系列的值。
 
-**Event-driven programming** 
-: User interactions are represented by event objects
-that are dispatched to callbacks registered with event handlers. Screen updates
-are triggered by a similar callback mechanism. The
-[Listenable][]
-class, which is used as the basis of the animation system, formalizes a
-subscription model for events with multiple listeners.
+**Event-driven programming**
+<br> User interactions are represented by event objects
+  that are dispatched to callbacks registered with event handlers.
+  Screen updates are triggered by a similar callback mechanism. The
+  [`Listenable`][] class, which is used as the basis of the
+  animation system, formalizes a subscription model for events
+  with multiple listeners.
 
 **事件驱动编程 (event-driven programming)** 
-：用户的交互操作被包装成事件对象，这些对象发送给被各个 event handler 注册的回调方法。屏幕内容的更新使用的也是类似的回调机制。比如，做为动画系统构建基础的 [Listenable][] 类，就采用了包含多个事件监听者的订阅模型。
+<br> 用户的交互操作被包装成事件对象，这些对象发送给被各个 event handler 注册的回调方法。
+屏幕内容的更新使用的也是类似的回调机制。
+比如，做为动画系统构建基础的 [`Listenable`][] 类，
+就采用了包含多个事件监听者的订阅模型。
 
-**Class-based object-oriented programming** 
-: Most of the APIs of the framework
-are built using classes with inheritance. We use an approach whereby we define
-very high-level APIs in our base classes, then specialize them iteratively in
-subclasses. For example, our render objects have a base class
-([RenderObject][])
-that is agnostic regarding the coordinate system, and then we have a subclass
-([RenderBox][])
-that introduces the opinion that the geometry should be based on the Cartesian
-coordinate system (x/width and y/height).
-
+**Class-based object-oriented programming**
+<br> Most of the APIs of the framework are built using classes
+  with inheritance. We use an approach whereby we define
+  very high-level APIs in our base classes, then specialize
+  them iteratively in subclasses. For example,
+  our render objects have a base class ([`RenderObject`][])
+  that is agnostic regarding the coordinate system,
+  and then we have a subclass ([`RenderBox`][])
+  that introduces the opinion that the geometry should be based
+  on the Cartesian coordinate system (x/width and y/height).
+  
 **面向类编程 (class-based programming，是面向对象编程的一种方式)** 
-：框架内绝大多数的 API 是由包含各种继承关系的类来组成的。我们在基本类中定义较高级别的 API，然后在其子类中对这些 API 进行特化处理。比如，我们的渲染对象就有一个基本类 [RenderObject][])，它对坐标系的细节并不关心，但它的子类 [RenderBox][]) 就引入了笛卡尔坐标系的概念 (x/y坐标值，以及宽度高度的概念)。
+<br> 框架内绝大多数的 API 是由包含各种继承关系的类来组成的。
+我们在基本类中定义较高级别的 API，然后在其子类中对这些 API 进行特化处理。
+比如，我们的渲染对象就有一个基本类 [`RenderObject`][])，
+它对坐标系的细节并不关心，
+但它的子类 [`RenderBox`][]) 就引入了笛卡尔坐标系的概念
+(x/y坐标值，以及宽度高度的概念)。
 
-**Prototype-based object-oriented programming** 
-: The
-[ScrollPhysics][]
-class chains instances to compose the physics that apply to scrolling
-dynamically at runtime. This lets the system compose, for example, paging
-physics with platform-specific physics, without the platform having to be
-selected at compile time.
+**Prototype-based object-oriented programming**
+<br> The [`ScrollPhysics`][] class chains instances to compose
+  the physics that apply to scrolling dynamically at runtime.
+  This lets the system compose, for example, paging physics
+  with platform-specific physics, without the platform having to be
+  selected at compile time.
 
 **原型编程 (prototype-based programming，同样是面向对象编程的一种方式)** 
-：[ScrollPhysics][] 类在运行时动态链接那些会组成滚动逻辑的实例。这就使得系统无需在编译时提前选择平台的情况下，也能组合出符合平台特性的页面滚动效果。
+<br> [`ScrollPhysics`][] 类在运行时动态链接那些会组成滚动逻辑的实例。
+这就使得系统无需在编译时提前选择平台的情况下，
+也能组合出符合平台特性的页面滚动效果。
 
-**Imperative programming** 
-: Straightforward imperative programming, usually
-paired with state encapsulated within an object, is used where it provides the
-most intuitive solution. For example, tests are written in an imperative style,
-first describing the situation under test, then listing the invariants that the
-test must match, then advancing the clock or inserting events as necessary for
-the test.
+**Imperative programming**
+<br> Straightforward imperative programming, usually
+  paired with state encapsulated within an object,
+  is used where it provides the most intuitive solution.
+  For example, tests are written in an imperative style,
+  first describing the situation under test, then listing
+  the invariants that the test must match, then advancing
+  the clock or inserting events as necessary for the test.
 
 **指令式编程 (imperative programming)** 
-：简单直白的指令式编程，通常和对象内封装的状态 (state) 搭配使用，这种范式能提供最符合直觉的解法。比如，测试就是使用指令式编程实现的，首先描述出测试的环境，然后给出测试需要满足的定量，最后开始步进，或者根据测试需要插入事件。
+<br> 简单直白的指令式编程，通常和对象内封装的状态 (state) 搭配使用，
+这种范式能提供最符合直觉的解法。
+比如，测试就是使用指令式编程实现的，首先描述出测试的环境，
+然后给出测试需要满足的定量，最后开始步进，
+或者根据测试需要插入事件。
 
-**Reactive programming** 
-: The widget and element trees are sometimes described as
-reactive, because new inputs provided in a widget's constructor are immediately
-propagated as changes to lower-level widgets by the widget's build method, and
-changes made in the lower widgets (e.g., in response to user input) propagate
-back up the tree via event handlers. Aspects of both functional-reactive and
-imperative-reactive are present in the framework, depending on the needs of the
-widgets. Widgets with build methods that consist of just an expression
-describing how the widget reacts to changes in its configuration are functional
-reactive widgets (e.g., the Material
-[Divider][] class).
-Widgets whose build methods construct a list of children over several
-statements, describing how the widget reacts to changes in its configuration,
-are imperative reactive widgets (e.g., the
-[Chip][] class).
+**Reactive programming**
+<br> The widget and element trees are sometimes described as
+  reactive, because new inputs provided in a widget's
+  constructor are immediately propagated as changes to
+  lower-level widgets by the widget's build method, and
+  changes made in the lower widgets (for example,
+  in response to user input) propagate back up the tree
+  via event handlers. Aspects of both functional-reactive and
+  imperative-reactive are present in the framework,
+  depending on the needs of the widgets. Widgets with build
+  methods that consist of just an expression describing how
+  the widget reacts to changes in its configuration are functional
+  reactive widgets (for example, the Material [`Divider`][] class).
+  Widgets whose build methods construct a list of children over several
+  statements, describing how the widget reacts to changes in its
+  configuration, are imperative reactive widgets (for example, the
+  [`Chip`][] class).
 
 **响应式编程 (reactive programming)** 
-：Widget 和元素树有时候被描述为响应式的，因为随 widget 构造方法引入的新输入会随着其 build 方法传播给更低等级的 widget；而底层 widget 中出现的修改 (如响应用户的输入) 也会沿着结构树通过 event handler 向上传播。在整个框架中，函数-响应式以及指令-响应式的实现都有出现，具体取决于 widget 的功能需求。Widget 的 build 方法如果只是包含其针对变化如何响应的表达式的话，就是函数-响应式 widget (如 Material [Divider][] 类)。如果 widget 的 build 方法包含一系列构造子元素的表达式，用于描述该 widget 如何响应变化的话，那它就是指令响应式 widget (如 [Chip][] 类)。
+<br> Widget 和元素树有时候被描述为响应式的，
+因为随 widget 构造方法引入的新输入会随着其 build 方法
+传播给更低等级的 widget；
+而底层 widget 中出现的修改 (如响应用户的输入) 也会
+沿着结构树通过 event handler 向上传播。
+在整个框架中，函数-响应式以及指令-响应式的实现都有出现，
+具体取决于 widget 的功能需求。
+Widget 的 build 方法如果只是包含其针对变化如何响应的表达式的话，
+就是函数-响应式 widget (如 Material [`Divider`][] 类)。
+如果 widget 的 build 方法包含一系列构造子元素的表达式，
+用于描述该 widget 如何响应变化的话，
+那它就是指令响应式 widget (如 [`Chip`][] 类)。
 
-**Declarative programming** 
-: The build methods of widgets are often a single
-expression with multiple levels of nested constructors, written using a strictly
-declarative subset of Dart. Such nested expressions could be mechanically
-transformed to or from any suitably expressive markup language. For example,
-the
-[UserAccountsDrawerHeader][]
-widget has a long build method (20+ lines), consisting of a single nested
-expression. This can also be combined with the imperative style to build UIs
-that would be harder to describe in a pure-declarative approach.
-
+**Declarative programming**
+<br> The build methods of widgets are often a single
+  expression with multiple levels of nested constructors,
+  written using a strictly declarative subset of Dart.
+  Such nested expressions could be mechanically transformed
+  to or from any suitably expressive markup language.
+  For example, the [`UserAccountsDrawerHeader`][]
+  widget has a long build method (20+ lines),
+  consisting of a single nested expression.
+  This can also be combined with the imperative style to build UIs
+  that would be harder to describe in a pure-declarative approach.
+  
 **声明式编程 (declarative programming)** 
-：Widget 的 build 方法通常都是一个单一表达式，它包含多级嵌套的构造函数，且使用 Dart 严格的声明式子集编写。这些嵌套的表达式可以与合适的标记语言互相转换。比如，[UserAccountsDrawerHeader][] 这个 widget 就有一个很长的 build 方法 (20 多行)，由一个嵌套的表达式构成。这种范式也可以和指令式混合使用，以实现某些很难用纯声明式的方法实现的 UI。
+<br> Widget 的 build 方法通常都是一个单一表达式，
+它包含多级嵌套的构造函数，且使用 Dart 严格的声明式子集编写。
+这些嵌套的表达式可以与合适的标记语言互相转换。
+比如，[`UserAccountsDrawerHeader`][] 这个 widget
+就有一个很长的 build 方法 (20 多行)，由一个嵌套的表达式构成。
+这种范式也可以和指令式混合使用，以实现某些很难用纯声明式的方法实现的 UI。
 
-**Generic programming** 
-: Types can be used to help developers catch programming
-errors early. The Flutter framework uses generic programming to help in this
-regard. For example, the
-[State][] class is
-parameterized in terms of the type of its associated widget, so that the Dart
-analyzer can catch mismatches of states and widgets. Similarly, the
-[GlobalKey][] class
-takes a type parameter so that it can access a remote widget's state in a
-type-safe manner (using runtime checking), the
-[Route][] interface is
-parameterized with the type that it is expected to use when
-[popped][], and
-collections such as
-[List][]s,
-[Map][]s, and
-[Set][]s are all
-parameterized so that mismatched elements can be caught early either during
-analysis or at runtime during debugging.
+**Generic programming**
+<br> Types can be used to help developers catch programming
+  errors early. The Flutter framework uses generic programming to
+  help in this regard. For example, the [`State`][]
+  class is parameterized in terms of the type of its
+  associated widget, so that the Dart analyzer can catch
+  mismatches of states and widgets. Similarly, the
+  [`GlobalKey`][] class takes a type parameter so that it
+  can access a remote widget's state in a type-safe manner
+  (using runtime checking), the [`Route`][] interface is
+  parameterized with the type that it is expected to use when
+  [popped][], and collections such as [`List`][]s, [`Map`][]s,
+  and [`Set`][]s are all parameterized so that mismatched
+  elements can be caught early either during analysis or at
+  runtime during debugging.
 
 **泛型程序设计 (generic programming)** 
-：类型可以帮助开发者更早地抓到错误，基于这一点，Flutter 框架也采用了泛型开发。比如，[State][] 类就是如此，其关联的 widget 就是类型参数，如此一来 Dart 分析器就能捕获到 state 和 widget 不匹配的情况。类似的，[GlobalKey][] 类就接受一个类型参数，从而类型安全地访问一个 widget 的 state (会使用运行时检查)。[Route][] 接口也在被 [pop][] 时接受类型参数，另外 [List][], [Map][], [Set][] 这些集合也都如此，这样就可以在分析或者运行时尽早发现类型不匹配的错误。
+<br> 类型可以帮助开发者更早地抓到错误，
+基于这一点，Flutter 框架也采用了泛型开发。
+比如，[`State`][] 类就是如此，其关联的 widget 就是类型参数，
+如此一来 Dart 分析器就能捕获到 state 和 widget 不匹配的情况。
+类似的，[`GlobalKey`][] 类就接受一个类型参数，
+从而类型安全地访问一个 widget 的 state (会使用运行时检查)。
+[`Route`][] 接口也在被 [popped][] 时接受类型参数，
+另外 [`List`][], [`Map`][], [`Set`][] 这些集合也都如此，
+这样就可以在分析或者运行时尽早发现类型不匹配的错误。
 
-**Concurrent programming** 
-: Flutter makes heavy use of
-[Future][]s and
-other asynchronous APIs. For example, the animation system reports when an
-animation is finished by completing a future. The image loading system similarly
-uses futures to report when a load is complete.
+**Concurrent programming**
+<br> Flutter makes heavy use of [`Future`][]s and other
+  asynchronous APIs. For example, the animation system reports
+  when an animation is finished by completing a future.
+  The image loading system similarly uses futures to report
+  when a load is complete.
 
 **并发 (concurrent programming)** 
-：Flutter 大量使用诸如 [Future][] 等异步 API。比如，动画系统就会在动画执行完 future 时进行事件告知。同样的，图片加载系统也会使用 future 在加载完毕时进行告知。
+<br> Flutter 大量使用诸如 [`Future`][] 等异步 API。
+比如，动画系统就会在动画执行完 future 时进行事件告知。
+同样的，图片加载系统也会使用 future 在加载完毕时进行告知。
 
-**Constraint programming** 
-: The layout system in Flutter uses a weak form of
-constraint programming to determine the geometry of a scene. Constraints (e.g.,
-for cartesian boxes, a minimum and maximum width and a minimum and maximum
-height) are passed from parent to child, and the child selects a resulting
-geometry (e.g., for cartesian boxes, a size, specifically a width and a height)
-that fulfills those constraints. By using this technique, Flutter can usually
-lay out an entire scene with a single pass.
+**Constraint programming**
+<br> The layout system in Flutter uses a weak form of
+  constraint programming to determine the geometry of a scene.
+  Constraints (for example, for cartesian boxes, a minimum and
+  maximum width and a minimum and maximum height)
+  are passed from parent to child, and the child selects a resulting
+  geometry (for example, for cartesian boxes, a size,
+  specifically a width and a height) that fulfills those constraints.
+  By using this technique, Flutter can usually
+  lay out an entire scene with a single pass.
 
-  约束编程 (constraint programming)：Flutter 的布局系统使用了约束编程的简化形态来描述一个场景的几何性质。约束值 (比如一个笛卡尔矩形允许的最大 / 最小宽高值) 会从父元素传递给子元素，子元素最终选择一个能满足上面所有约束条件的最终尺寸。这种做法也使得 Flutter 能不依赖太多输入的情况下快速完成一个全新的布局。
+**约束编程 (constraint programming)**
+<br>Flutter 的布局系统使用了约束编程的简化形态来描述一个场景的几何性质。
+约束值 (比如一个笛卡尔矩形允许的最大 / 最小宽高值) 会从父元素传递给子元素，
+子元素最终选择一个能满足上面所有约束条件的最终尺寸。
+这种做法也使得 Flutter 能不依赖太多输入的情况下快速完成一个全新的布局。
 
 ## Project
 
@@ -1327,7 +1390,8 @@ Flutter is open source, and we encourage you to contribute.
 You can start by simply filing issues for feature requests
 and bugs in our [issue tracker][].
 
-Flutter 是开源的，我们鼓励您为此做出自己的贡献。您可以通过 [问题追踪入口][issue tracker] 来提交功能需求或者 bug 报告。
+Flutter 是开源的，我们鼓励您为此做出自己的贡献。
+您可以通过 [问题追踪入口][issue tracker] 来提交功能需求或者 bug 报告。
 
 We recommend that you join our mailing list at
 [{{site.email}}][] and let us
@@ -1379,24 +1443,23 @@ There's an API to find the list of licenses you need to show:
 
 您可以使用 API 来确定需要显示的许可协议。
 
-* If your application has a
-  [Drawer][],
-  add an
-  [AboutListTile][].
+* If your application has a [`Drawer`][], add an
+  [`AboutListTile`][].
 
-  如果您的应用使用了 [Drawer][]，则添加一个 [AboutListTile][]。
+  如果您的应用使用了 [`Drawer`][]，则添加一个 [`AboutListTile`][]。
 
-* If your application doesn't have a Drawer but does use the Material Components
-  library, call either
-  [showAboutDialog][]
-  or [showLicensePage][].
+* If your application doesn't have a Drawer but does use the
+  Material Components library, call either [`showAboutDialog`][]
+  or [`showLicensePage`][].
 
-  如果您的应用不包含 Drawer 但使用了 Material 组件库，请调用 [showAboutDialog][] 或者 [showLicensePage][]。
+  如果您的应用不包含 Drawer 但使用了 Material 组件库，
+  请调用 [`showAboutDialog`][] 或者 [`showLicensePage`][]。
 
 * For a more custom approach, you can get the raw licenses from the
   [`LicenseRegistry`][].
 
-  对于更加定制的场合，您可以使用 [LicenseRegistry][] 获得原始的许可内容。
+  对于更加定制的场合，您可以使用
+  [`LicenseRegistry`][] 获得原始的许可内容。
 
 ### Who works on Flutter?
 
@@ -1444,25 +1507,25 @@ We are focused on three things:
 我们目前集中于以下三件事：
 
 _Control_ 
-: Developers deserve access to, and control over, all layers of the
+<br> Developers deserve access to, and control over, all layers of the
   system. Which leads to:
 
-功能控制 
-：开发者应该能访问到系统所有层级的功能，且能获得全面的控制权。这也意味着：
+**功能控制**
+<br> 开发者应该能访问到系统所有层级的功能，且能获得全面的控制权。这也意味着：
 
 _Performance_ 
-: Users deserve perfectly fluid, responsive,
+<br> Users deserve perfectly fluid, responsive,
   jank-free apps. Which leads to:
 
-性能表现 
-： 用户应该获得流畅、响应迅捷且没有垃圾的应用。这也意味着：
+**性能表现**
+<br> 用户应该获得流畅、响应迅捷且没有卡顿的应用。这也意味着：
 
 _Fidelity_ 
-: Everyone deserves precise, beautiful,
+<br> Everyone deserves precise, beautiful,
   delightful mobile app experiences.
 
-精确实现 
-：每一个人都应该获得精确、优美且富有表现力的移动应用体验。
+**精确实现**
+<br> 每一个人都应该获得精确、优美且富有表现力的移动应用体验。
 
 ### Will Apple reject my Flutter app?
 

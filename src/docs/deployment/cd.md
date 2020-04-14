@@ -32,20 +32,23 @@ delivery from a local machine.
 建议在迁移到基于云计算的系统之前，先在本地测试其构建和部署流程。
 您还可以使用本地机器执行连续交付。
 
-1. Install fastlane `gem install fastlane` or `brew cask install fastlane`.
+1. Install fastlane `gem install fastlane` or `brew install fastlane`.
+Visit the [fastlane docs][fastlane] for more info.
 
-   安装 fastlane `gem install fastlane` 或 `brew cask install fastlane`。
+   安装 fastlane `gem install fastlane` 或 `brew install fastlane`。
+访问 [fastlane docs][fastlane] 以获得更多信息。
 
 1. Create your Flutter project, and when ready, make sure that your project builds via
-   
+ 
    创建您的 Flutter 项目，准备就绪后，确保通过如下途径构建项目：
 
-    * ![Android](/images/cd/android.png) `flutter build apk --release`;
+    * ![Android](/images/cd/android.png) `flutter build appbundle`; 以及
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
+    
 1. Initialize the fastlane projects for each platform.
 
    初始化各平台的 fastlane 项目：
-
+   
     * ![Android](/images/cd/android.png) In your `[project]/android`
     directory, run `fastlane init`.
       
@@ -63,15 +66,17 @@ delivery from a local machine.
    编辑 `Appfile` 以确保它有应用程序的基本数据配置：
 
     * ![Android](/images/cd/android.png) Check that `package_name` in
-    `[project]/android/Appfile` matches your package name in AndroidManifest.xml.
+    `[project]/android/fastlane/Appfile` matches your package name in AndroidManifest.xml.
     
-      ![Android](/images/cd/android.png) 检查在 `[project]/android/Appfile` 文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
+      ![Android](/images/cd/android.png) 检查在 `[project]/android/fastlane/Appfile` 
+      文件中的 `package_name` 是否匹配在 AndroidManifest.xml 中的包名。
     
     * ![iOS](/images/cd/ios.png) Check that `app_identifier` in
-    `[project]/ios/Appfile` also matches Info.plist's bundle identifier. Fill in
-    `apple_id`, `itc_team_id`, `team_id` with your respective account info.
+    `[project]/ios/fastlane/Appfile` also matches Info.plist's bundle identifier. 
+    Fill in `apple_id`, `itc_team_id`, `team_id` with your respective account info.
     
-      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/Appfile` 中的  `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
+      ![iOS](/images/cd/ios.png) 检查在 `[project]/ios/fastlane/Appfile` 中的
+      `app_identifier` 是否匹配 Info.plist 文件中的 bundle identifier.
     
 1. Set up your local login credentials for the stores.
 
@@ -83,8 +88,9 @@ delivery from a local machine.
     it into any public source control repositories._
     
       ![Android](/images/cd/android.png) 按照
-      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
-     *.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。*
+      [Supply setup steps](https://docs.fastlane.tools/getting-started/android/setup/#setting-up-supply) 
+      操作，并且确保 `fastlane supply init` 成功同步了你在 Google Play 商店控制台中的数据。
+      **.json 文件与密码一样重要，切勿将其公开在任何公共源代码控制存储库。**
     
     * ![iOS](/images/cd/ios.png) Your iTunes Connect username is already
     in your `Appfile`'s `apple_id` field. Set the `FASTLANE_PASSWORD` shell
@@ -101,13 +107,13 @@ delivery from a local machine.
    设置代码签名。
    
     * ![Android](/images/cd/android.png) On Android, there are two
-    signing keys: deployment and upload. The end-users download the .apk signed
-    with the 'deployment key'. An 'upload key' is used to authenticate the .apk
-    uploaded by developers onto the Play Store and is re-signed with the
-    deployment key once in the Play Store.
+      signing keys: deployment and upload. The end-users download the .apk signed
+      with the 'deployment key'. An 'upload key' is used to authenticate the .aab / .apk
+      uploaded by developers onto the Play Store and is re-signed with the
+      deployment key once in the Play Store.
     
       ![Android](/images/cd/android.png) 在 Android 上有两种签名 key：
-      发布签名和上传签名。最终用户下载的 .apk 文件使用发布签名。
+      发布签名和上传签名。最终用户下载的 .aab / .apk 文件使用发布签名。
       上传签名提供给开发者上传到 Google Play 商店的认证。
       上传后，Google Play 商店会重新使用 发布签名对 .apk 文件签名。
 
@@ -136,7 +142,7 @@ delivery from a local machine.
     ready to test and deploy using TestFlight or App Store.
     
       ![iOS](/images/cd/ios.png) 在iOS上，当您准备使用 TestFlight 或 App Store 进行测试和部署时，使用分发证书而不是开发证书进行创建和签名。
-
+      
         * Create and download a distribution certificate in your [Apple Developer Account console][].
         
           在 [Apple Developer Account console][] 创建并下载一个分发证书。
@@ -151,25 +157,30 @@ delivery from a local machine.
    给每个不同的平台创建一个 `Fastfile` 脚本。
    
     * ![Android](/images/cd/android.png) On Android, follow the
-    [fastlane Android beta deployment guide][].
-    Your edit could be as simple as adding a `lane` that calls `upload_to_play_store`.
-    Set the `apk` argument to `../build/app/outputs/apk/release/app-release.apk`
-    to use the apk `flutter build` already built.
+      [fastlane Android beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls
+      `upload_to_play_store`.
+      Set the `aab` argument to `../build/app/outputs/bundle/release/app-release.aab`
+      to use the app bundle `flutter build` already built.
     
       ![Android](/images/cd/android.png) 在 Android 上按照
-      [fastlane Android beta deployment guide][] 指引操作。你可以简单的编辑一下文件，加一个名叫
-      `upload_to_play_store` 的 `lane`。为了使用 `flutter build` 命令编译 apk，
-      要把 `apk` 参数设置为 `../build/app/outputs/apk/release/app-release.apk`。
+      [fastlane Android beta deployment guide][] 指引操作。
+      你可以简单的编辑一下文件，加一个名叫 `upload_to_play_store` 的 `lane`。
+      为了使用 `flutter build` 命令编译 `aab`，
+      要把 `apk` 参数设置为 `../build/app/outputs/bundle/release/app-release.aab`。
     
-    * ![iOS](/images/cd/ios.png) On iOS, follow the [fastlane iOS beta deployment guide][].
-    Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
-    `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
-    build is required since `flutter build` builds an .app rather than archiving
-    .ipas for release.
+    * ![iOS](/images/cd/ios.png) On iOS, follow the
+      [fastlane iOS beta deployment guide][].
+      Your edit could be as simple as adding a `lane` that calls `build_ios_app` with
+      `export_method: 'app-store'` and `upload_to_testflight`. On iOS an extra
+      build is required since `flutter build` builds an .app rather than archiving
+      .ipas for release.
     
-       ![iOS](/images/cd/ios.png) 在 iOS 上，按照 [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
-      你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用 `export_method: 'app-store'` 和 `upload_to_testflight`。
-      在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
+       ![iOS](/images/cd/ios.png) 在 iOS 上，按照
+       [fastlane iOS beta 部署指南][fastlane iOS beta deployment guide] 指引操作。
+       你可以简单编辑一下文件，加一个名叫 `build_ios_app` 的 `lane`，并且同时调用
+       `export_method: 'app-store'` 和 `upload_to_testflight`。
+       在 iOS 上只有当要编译成 .app 的时候才会用到 `flutter build`，其他情况用不到。
 
 You're now ready to perform deployments locally or migrate the deployment
 process to a continuous integration (CI) system.
@@ -181,10 +192,10 @@ process to a continuous integration (CI) system.
 ## 在本地运行部署
 
 1. Build the release mode app.
-
-   构建发布模式应用程序。
    
-    * ![Android](/images/cd/android.png) `flutter build apk --release`.
+   构建发布模式的应用：
+
+    * ![Android](/images/cd/android.png) `flutter build appbundle`.
     * ![iOS](/images/cd/ios.png) `flutter build ios --release --no-codesign`.
     
     No need to sign now since fastlane will sign when archiving.
@@ -194,7 +205,7 @@ process to a continuous integration (CI) system.
 1. Run the Fastfile script on each platform.
 
    在每个平台上运行 Fastfile 脚本。
-
+   
     * ![Android](/images/cd/android.png) `cd android` then
     `fastlane [name of the lane you created]`.
     * ![iOS](/images/cd/ios.png) `cd ios` then
@@ -286,9 +297,8 @@ dependencies are stable and reproducible between local and cloud machines. Howev
       
       ```
       source "https://rubygems.org"
-
-        gem "fastlane"
-        ```
+      gem "fastlane"
+      ```
     * In both directories, run `bundle update` and check both `Gemfile` and
     `Gemfile.lock` into source control.
     
@@ -315,7 +325,7 @@ repository root.
     * See [fastlane CI documentation][] for CI specific setup.
     
       有关特定于 CI 的设置，请参见 [fastlane CI 文档][]。
-
+    
     * During the setup phase, depending on the platform, make sure that:
     
       在设置阶段，根据平台，确保以下几点：
@@ -327,20 +337,26 @@ repository root.
          * For Android, make sure the Android SDK is available and the `ANDROID_HOME`
          path is set.
            
-           对于 Android 平台， 请确保已经设置正确的 `ANDROID_HOME` 环境变量。
+           对于 Android 平台，请确保已经设置正确的 `ANDROID_HOME` 环境变量。
          
          * Run `bundle install` in `[project]/android` or `[project]/ios`.
            
            在 `[project]/android` 或 `[project]/ios` 目录下分别运行 `bundle install`命令。
          
          * Make sure the Flutter SDK is available and set in `PATH`.
+         
+           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
+           
     * In the script phase of the CI task:
     
-           确保 Flutter SDK 已经正确了设置在了 `PATH` 环境变量中
+      在 CI 任务的脚本阶段：
+      
+         * Run `flutter build appbundle` or
+           `flutter build ios --release --no-codesign`,
+           depending on the platform.
          
-         * Run `flutter build apk --release` or `flutter build ios --release --no-codesign` depending on the platform.
-         
-           根据平台的不同可以运行 `flutter build apk --release` 或 `flutter build ios --release --no-codesign`
+           根据平台的不同可以运行 `flutter build appbundle` 或者
+           `flutter build ios --release --no-codesign`。
    
          * `cd android` or `cd ios`.
          
@@ -354,17 +370,16 @@ repository root.
 
 ### 参考
 
-The [Flutter Gallery in the Flutter
-repo][]
-uses fastlane for continuous deployment. See the source for a working example
-of fastlane in action. Also see the Flutter framework repository's
-[Cirrus script][].
+The [Flutter Gallery Project][]
+uses fastlane for continuous deployment. 
+See the source for a working example of fastlane in action. 
+Also see the Flutter framework repository's [Cirrus script][].
 
-[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery in the Flutter repo] 使用 fastlane 连续部署。
-有关 fastlane 实际运行示例，请参阅源代码。另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][]。
+[Flutter repo 里的示例应用 Flutter Gallery][Flutter Gallery Project]
+使用 fastlane 连续部署。有关 fastlane 实际运行示例，请参阅源代码。
+另请参阅 Flutter 框架仓库库的 [Cirrus 脚本][Cirrus script]。
 
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
-
 [fastlane CI 文档]: https://docs.fastlane.tools/best-practices/continuous-integration
 
 ## Other services
@@ -374,17 +389,6 @@ of fastlane in action. Also see the Flutter framework repository's
 The following are some other options available to help automate the delivery of your application.
 
 其他关于如何进行持续交付的服务：
-
-* [GitLab Continuous Integration
-  (GitLab CI/CD)][].
-  You'll need to create and configure a `.gitlab-ci.yml` file. You can 
-  [find an example][]
-  in the [flutter_redux library][].
-  
-  [GitLab 的持续交付集成 (GitLab CI/CD)][GitLab Continuous Integration
-  (GitLab CI/CD)].
-  你需要创建一个 `.gitlab-ci.yml` 的配置文件，你可以在 [flutter_redux library][]
-  这个 repo 找到 [例子][find an example]。
   
 * [Codemagic CI/CD for Flutter][]
   
@@ -409,10 +413,8 @@ The following are some other options available to help automate the delivery of 
 [fastlane Android beta deployment guide]: https://docs.fastlane.tools/getting-started/android/beta-deployment/
 [fastlane CI documentation]: https://docs.fastlane.tools/best-practices/continuous-integration
 [fastlane iOS beta deployment guide]: https://docs.fastlane.tools/getting-started/ios/beta-deployment/
-[find an example]: https://raw.githubusercontent.com/brianegan/flutter_redux/master/.gitlab-ci.yml
 [Flutter CI/CD with Bitrise]: https://devcenter.bitrise.io/getting-started/getting-started-with-flutter-apps/
-[Flutter Gallery in the Flutter repo]: {{site.github}}/flutter/flutter/tree/master/examples/flutter_gallery
-[flutter_redux library]: {{site.github}}/brianegan/flutter_redux
+[Flutter Gallery Project]: {{site.github}}/flutter/gallery
 [GitHub Actions- CI/CD on GitHub]: https://github.com/features/actions
 [GitLab Continuous Integration (GitLab CI/CD)]: https://docs.gitlab.com/ee/ci/README.html#doc-nav
 [Match]: https://docs.fastlane.tools/actions/match/

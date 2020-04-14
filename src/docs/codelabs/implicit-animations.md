@@ -6,8 +6,10 @@ description: "通过交互式示例和练习学习如何在 Flutter 中使用渐
 toc: true
 diff2html: true
 js:
-- url: /assets/codelabs/js/animations_examples.js
-  defer: true
+  - defer: true
+    url: https://dartpad.cn/inject_embed.dart.js
+  - defer: true
+    url: /assets/codelabs/js/animations_examples.js
 ---
 
 <?code-excerpt path-base="animation/implicit"?>
@@ -59,12 +61,8 @@ consists of a [Material App] home screen containing:
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla AnimatedOpacity https://gist.github.com/e2800d378eb7720d0b076073f72eabc1 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=e2800d378eb7720d0b076073f72eabc1"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Vanilla AnimatedOpacity https://gist.github.com/d7b09149ffee2f0535bb0c04d96987f5 -->
+{% include implicit-animations/fade-in-starter-code.md %}
 
 {{site.alert.important}}
   This page uses an embedded version of [DartPad] to display
@@ -97,7 +95,7 @@ To create a fade-in effect, you can animate the `opacity` property using the
 ```diff
 --- opacity1/lib/main.dart
 +++ opacity2/lib/main.dart
-@@ -23,7 +23,7 @@
+@@ -21,7 +21,7 @@
              style: TextStyle(color: Colors.blueAccent),
            ),
            onPressed: () => null),
@@ -122,7 +120,7 @@ the starting value for `opacity` to zero:
 ```diff
 --- opacity2/lib/main.dart
 +++ opacity3/lib/main.dart
-@@ -13,6 +13,8 @@
+@@ -11,6 +11,8 @@
  }
 
  class _FadeInDemoState extends State<FadeInDemo> {
@@ -131,10 +129,11 @@ the starting value for `opacity` to zero:
    @override
    Widget build(BuildContext context) {
      return Column(children: <Widget>[
-@@ -24,6 +26,7 @@
+@@ -22,6 +24,8 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
++        duration: Duration(seconds: 3),
 +        opacity: opacity,
          child: Column(
            children: <Widget>[
@@ -153,7 +152,7 @@ to set `opacity` to 1:
 ```diff
 --- opacity4/lib/main.dart
 +++ opacity5/lib/main.dart
-@@ -20,11 +20,14 @@
+@@ -18,11 +18,14 @@
      return Column(children: <Widget>[
        Image.network(owl_url),
        MaterialButton(
@@ -190,10 +189,11 @@ you can start with 2 seconds:
 ```diff
 --- opacity3/lib/main.dart
 +++ opacity4/lib/main.dart
-@@ -26,6 +26,7 @@
+@@ -24,7 +24,7 @@
            ),
            onPressed: () => null),
        AnimatedOpacity(
+-        duration: Duration(seconds: 3),
 +        duration: Duration(seconds: 2),
          opacity: opacity,
          child: Column(
@@ -205,12 +205,8 @@ you can start with 2 seconds:
 Here's the example with the completed changes you've made&mdash;run this
 example and click the **Show details** button to trigger the animation.
 
-<!-- AnimatedOpacity https://gist.github.com/36bb91f24db7122ec3def0153683edb7 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=36bb91f24db7122ec3def0153683edb7"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- AnimatedOpacity https://gist.github.com/4207fea3975b2d329e81d9c9ba84d271 -->
+{% include implicit-animations/fade-in-complete.md %}
 
 ### Putting it all together
 
@@ -249,12 +245,9 @@ different types (`double` and `Color`).
 
 Click the **Run** button to run the example:
 
-<!-- Vanilla Animated Container: https://gist.github.com/b8c7618317d04833dc8941df27f0529d -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=b8c7618317d04833dc8941df27f0529d"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Vanilla Animated Container: https://gist.github.com/8501583cb789504d75317a5ba1ca6930 -->
+{% include implicit-animations/shape-shifting-starter-code.md %}
+
 
 ### Animate color, borderRadius, and margin with AnimatedContainer
 
@@ -284,7 +277,7 @@ Change the `Container` widget to an `AnimatedContainer` widget:
 ```diff
 --- container1/lib/main.dart
 +++ container2/lib/main.dart
-@@ -45,7 +45,7 @@
+@@ -44,7 +44,7 @@
              SizedBox(
                width: 128,
                height: 128,
@@ -311,7 +304,7 @@ for the `color`, `borderRadius`, and `margin` state variables:
 ```diff
 --- container2/lib/main.dart
 +++ container3/lib/main.dart
-@@ -36,6 +36,14 @@
+@@ -35,6 +35,14 @@
      margin = randomMargin();
    }
 
@@ -336,7 +329,7 @@ invoke the `change()` method in the `onPressed()` handler:
 ```diff
 --- container3/lib/main.dart
 +++ container4/lib/main.dart
-@@ -67,7 +67,7 @@
+@@ -66,7 +66,7 @@
                  'change',
                  style: TextStyle(color: Colors.white),
                ),
@@ -354,23 +347,23 @@ between the old and new values:
 ```diff
 --- container4/lib/main.dart
 +++ container5/lib/main.dart
-@@ -8,6 +8,8 @@
- import 'package:flutter_web_test/flutter_web_test.dart';
- import 'package:flutter_web_ui/ui.dart' as ui;
+@@ -6,6 +6,8 @@
+
+ import 'package:flutter/material.dart';
 
 +const _duration = Duration(milliseconds: 400);
 +
  double randomBorderRadius() {
    return Random().nextDouble() * 64;
  }
-@@ -60,6 +62,7 @@
+@@ -58,6 +60,7 @@
+                   color: color,
                    borderRadius: BorderRadius.circular(borderRadius),
                  ),
++                duration: _duration,
                ),
-+              duration: _duration,
              ),
              MaterialButton(
-               color: Theme.of(context).primaryColor,
 ```
 
 ### Shape-shifting (complete)
@@ -380,12 +373,8 @@ and click the **Change** button to trigger the animation. Notice that each time
 you click the **Change** button, the shape animates to its new values
 for `margin`, `borderRadius`, and `color`.
 
-<!-- Animated Container: https://gist.github.com/8d8f71cac9095009df770eb1db2c8256 -->
-<iframe
-  src="{{site.custom.dartpad.embed-flutter-prefix}}?id=8d8f71cac9095009df770eb1db2c8256"
-  style="border: 1px solid lightgrey; margin-top: 10px; margin-bottom: 25px"
-  frameborder="no" height="500" width="100%"
-></iframe>
+<!-- Animated Container: https://gist.github.com/ddfbc68ec9dc28a48703d29248f5366f -->
+{% include implicit-animations/shape-shifting-complete.md %}
 
 ### Using animation curves
 
@@ -406,22 +395,20 @@ and watch how the animation changes when you pass the
 ```diff
 --- container5/lib/main.dart
 +++ container6/lib/main.dart
-@@ -63,6 +63,7 @@
+@@ -61,6 +61,7 @@
+                   borderRadius: BorderRadius.circular(borderRadius),
                  ),
+                 duration: _duration,
++                curve: Curves.easeInOutBack,
                ),
-               duration: _duration,
-+              curve: Curves.easeInOutBack,
              ),
              MaterialButton(
-               color: Theme.of(context).primaryColor,
 ```
 
 Now that you have passed `easeInOutBack` as the value for `curve` to
 `AnimatedContainer`, notice that the rates of change for `margin`,
 `borderRadius`, and `color` follow the curve defined by the
 `easeInOutBack` curve:
-
-<!-- ![PlayButton](/images/play_button.svg){:#animation_1_play_button_} -->
 
 <div id="animation_1_play_button_"></div>
 <video id="animation_1" style="width:464px; height:192px;" loop="">
@@ -455,7 +442,7 @@ additional capabilities of implicit animations:
 * If you do not specify a `curve`,
   implicit animations default to a [linear curve].
 
-## What's Next?
+## What's next?
 
 Congratulations, you've finished the codelab! If you'd like to learn more,
 here are some suggestions for where to go next:
